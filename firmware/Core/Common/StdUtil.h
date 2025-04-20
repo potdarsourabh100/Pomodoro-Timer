@@ -111,8 +111,12 @@
 
 __attribute__((weak)) void stdutil_putchar(char c)
 {
-    /*For example: USART1->DR = c;
+    /*TODO: For example: USART1->DR = c;
      Or implement your HAL_UART_Transmit(&huart, &c, 1, timeout);*/
+
+	  /* Prevent unused argument(s) compilation warning */
+	  UNUSED(c);
+
 }
 
 void debugprintf(const char *format, ...)
@@ -124,9 +128,9 @@ void debugprintf(const char *format, ...)
     vsnprintf(buffer, sizeof(buffer), format, args);
     va_end(args);
 
-    while(*p != '\0')
+    for (char *p = buffer; *p != '\0'; p++)
     {
-    	stdutil_putchar(*p++);
+    	stdutil_putchar(*p);
     }
 }
 /***********************************END****************************************/

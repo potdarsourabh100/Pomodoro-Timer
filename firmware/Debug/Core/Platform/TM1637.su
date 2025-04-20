@@ -1,0 +1,12 @@
+../Core/Platform/TM1637.c:25:6:Delay_us	24	static,ignoring_inline_asm
+../Core/Platform/TM1637.c:33:6:TM1637_Start	8	static
+../Core/Platform/TM1637.c:42:6:TM1637_Stop	8	static
+../Core/Platform/TM1637.c:53:6:TM1637_WaitForAck	8	static
+../Core/Platform/TM1637.c:63:6:TM1637_WriteByte	24	static
+../Core/Platform/TM1637.c:84:6:TM1637_WriteDataCommand	16	static
+../Core/Platform/TM1637.c:92:6:TM1637_WriteData	24	static
+../Core/Platform/TM1637.c:105:6:TM1637_WriteDisplayCommand	16	static
+../Core/Platform/TM1637.c:113:6:TM1637_Write	24	static
+../Core/Platform/TM1637.c:137:6:TM1637_Toggle_Dots	24	static
+../Core/Platform/TM1637.c:175:6:TM1637_Update_Current_Data	24	static
+../Core/Platform/TM1637.c:183:6:TM1637_Update_Data_Dots	24	static
