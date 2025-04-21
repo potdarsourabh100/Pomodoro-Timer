@@ -211,17 +211,19 @@ void TIM3_IRQHandler(void)
 	seconds--;
 		if(seconds == -1)
 		{
-			seconds = 59;
 			minutes--;
-			if(minutes == 0)
+			if(seconds == -1 && minutes == -1)
 			{
-				HAL_TIM_Base_Stop_IT(&htim3);
-				uint8_t startvalue[] = {11,11,11,11};
-				TM1637_Write((DATA_COMMAND|WRITE_DATA_TO_DISPLAY|AUTOMATIC_ADDRESS_ADD|NORMAL_MODE),
+				  uint8_t startvalue[] = {10,10,10,10};
+				  TM1637_Write((DATA_COMMAND|WRITE_DATA_TO_DISPLAY|AUTOMATIC_ADDRESS_ADD|NORMAL_MODE),
 						  DISPLAY_1_REGISTER_ADDRESS,
 						  startvalue,
 						  (DISPLAY_COMMAND|PulSe_WIDTH_SET_04_16|DISPLAY_ON));
+
+				  HAL_TIM_Base_Stop_IT(&htim3);
+
 			}
+			seconds = 59;
 		}
 		updatestatus = 1;
   /* USER CODE END TIM3_IRQn 0 */
@@ -239,7 +241,6 @@ void EXTI15_10_IRQHandler(void)
   /* USER CODE BEGIN EXTI15_10_IRQn 0 */
 
   /* USER CODE END EXTI15_10_IRQn 0 */
-  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_10);
   HAL_GPIO_EXTI_IRQHandler(B1_Pin);
   /* USER CODE BEGIN EXTI15_10_IRQn 1 */
 

@@ -7,5 +7,5 @@
 ../Core/Src/stm32f4xx_it.c:161:6:DebugMon_Handler	1
 ../Core/Src/stm32f4xx_it.c:174:6:PendSV_Handler	1
 ../Core/Src/stm32f4xx_it.c:187:6:SysTick_Handler	1
-../Core/Src/stm32f4xx_it.c:208:6:TIM3_IRQHandler	3
-../Core/Src/stm32f4xx_it.c:237:6:EXTI15_10_IRQHandler	1
+../Core/Src/stm32f4xx_it.c:208:6:TIM3_IRQHandler	4
+../Core/Src/stm32f4xx_it.c:239:6:EXTI15_10_IRQHandler	1

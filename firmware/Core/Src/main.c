@@ -47,8 +47,8 @@ TIM_HandleTypeDef htim3;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
-int8_t minutes = 25,seconds = 00;
-uint8_t displayvalue[] = {2,5,0,0};
+int8_t minutes = 5,seconds = 00;
+uint8_t displayvalue[] = {0,5,0,0};
 uint8_t bitstatus = 0x00;
 uint8_t updatestatus = 0;
 /* USER CODE END PV */
@@ -64,18 +64,7 @@ static void MX_TIM3_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
-{
-	HAL_Delay(5);
-	if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_10) == GPIO_PIN_RESET)
-	{
-		HAL_TIM_Base_Start_IT(&htim3);
-	}
-	else if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_4) == GPIO_PIN_RESET)
-	{
-		HAL_TIM_Base_Stop_IT(&htim3);
-	}
-}
+
 /* USER CODE END 0 */
 
 /**
@@ -110,8 +99,6 @@ int main(void)
   MX_USART2_UART_Init();
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
-
-
   uint8_t startvalue[] = {10,10,10,10};
   TM1637_Write((DATA_COMMAND|WRITE_DATA_TO_DISPLAY|AUTOMATIC_ADDRESS_ADD|NORMAL_MODE),
 		  DISPLAY_1_REGISTER_ADDRESS,
@@ -122,11 +109,25 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+
   while (1)
   {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	  if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_10) == 0 || HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_3) == 0)
+	    {
+	    	HAL_Delay(20);
+	    	if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_10) == 0)
+	    	{
+	    		HAL_TIM_Base_Start_IT(&htim3);
+	    	}
+	    	else if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_3) == 0)
+	    	{
+	    		HAL_TIM_Base_Stop_IT(&htim3);
+	    	}
+	    }
+
 	if(updatestatus == 1)
 	{
 		updatestatus = 0;
@@ -304,13 +305,13 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin : PA10 */
   GPIO_InitStruct.Pin = GPIO_PIN_10;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PB3 */
   GPIO_InitStruct.Pin = GPIO_PIN_3;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 

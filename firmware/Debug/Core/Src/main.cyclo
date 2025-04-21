@@ -1,9 +1,8 @@
 D:/Sourabh_Workspace/My_Personal_Project_Workspaces/Pomodoro-Timer/firmware/Core/Common/StdUtil.h:112:28:stdutil_putchar	1
 D:/Sourabh_Workspace/My_Personal_Project_Workspaces/Pomodoro-Timer/firmware/Core/Common/StdUtil.h:122:6:debugprintf	2
-../Core/Src/main.c:67:6:HAL_GPIO_EXTI_Callback	3
-../Core/Src/main.c:85:5:main	2
-../Core/Src/main.c:148:6:SystemClock_Config	3
-../Core/Src/main.c:195:13:MX_TIM3_Init	4
-../Core/Src/main.c:240:13:MX_USART2_UART_Init	2
-../Core/Src/main.c:273:13:MX_GPIO_Init	1
-../Core/Src/main.c:341:6:Error_Handler	1
+../Core/Src/main.c:74:5:main	6
+../Core/Src/main.c:149:6:SystemClock_Config	3
+../Core/Src/main.c:196:13:MX_TIM3_Init	4
+../Core/Src/main.c:241:13:MX_USART2_UART_Init	2
+../Core/Src/main.c:274:13:MX_GPIO_Init	1
+../Core/Src/main.c:342:6:Error_Handler	1
