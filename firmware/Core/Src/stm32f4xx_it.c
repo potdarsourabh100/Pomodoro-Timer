@@ -46,6 +46,8 @@ extern uint8_t updatestatus;
 extern int8_t minutes,seconds;
 extern uint8_t displayvalue[5];
 extern uint8_t bitstatus;
+extern uint8_t operationsmonitor;
+extern uint8_t updatetimings;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -214,18 +216,21 @@ void TIM3_IRQHandler(void)
 			minutes--;
 			if(seconds == -1 && minutes == -1)
 			{
-				  uint8_t startvalue[] = {10,10,10,10};
-				  TM1637_Write((DATA_COMMAND|WRITE_DATA_TO_DISPLAY|AUTOMATIC_ADDRESS_ADD|NORMAL_MODE),
-						  DISPLAY_1_REGISTER_ADDRESS,
-						  startvalue,
-						  (DISPLAY_COMMAND|PulSe_WIDTH_SET_04_16|DISPLAY_ON));
-
-				  HAL_TIM_Base_Stop_IT(&htim3);
+				  operationsmonitor++;
+				  updatetimings = 1;
+				  if(operationsmonitor == 9)
+				  {
+					  operationsmonitor = 0;
+				  }
 
 			}
 			seconds = 59;
 		}
-		updatestatus = 1;
+
+		if(updatetimings == 0)
+		{
+			updatestatus = 1;
+		}
   /* USER CODE END TIM3_IRQn 0 */
   HAL_TIM_IRQHandler(&htim3);
   /* USER CODE BEGIN TIM3_IRQn 1 */

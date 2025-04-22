@@ -47,10 +47,19 @@ TIM_HandleTypeDef htim3;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
-int8_t minutes = 5,seconds = 00;
+typedef enum pomodoro_operations{focused_work,short_break,long_break}pomodoro_operations_t;
+
+int8_t minutes = 25,seconds = 00;
 uint8_t displayvalue[] = {0,5,0,0};
 uint8_t bitstatus = 0x00;
 uint8_t updatestatus = 0;
+uint8_t updatetimings = 0;
+
+uint8_t operationsmonitor = 0;
+pomodoro_operations_t pomodorioperations[] = {focused_work,short_break,focused_work,short_break,focused_work,short_break,focused_work,short_break,long_break};
+
+uint8_t pomodorominutetimings[] = {25,5,25,5,25,5,25,5,15};
+uint8_t pomodorosecondstimings[] = {0,0,0,0,0,0,0,0,0};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -99,11 +108,12 @@ int main(void)
   MX_USART2_UART_Init();
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
-  uint8_t startvalue[] = {10,10,10,10};
+  uint8_t startvalue[] = {2,5,0,0};
   TM1637_Write((DATA_COMMAND|WRITE_DATA_TO_DISPLAY|AUTOMATIC_ADDRESS_ADD|NORMAL_MODE),
 		  DISPLAY_1_REGISTER_ADDRESS,
 		  startvalue,
 		  (DISPLAY_COMMAND|PulSe_WIDTH_SET_04_16|DISPLAY_ON));
+  operationsmonitor = 0;
   HAL_Delay(1000);
   /* USER CODE END 2 */
 
@@ -132,6 +142,18 @@ int main(void)
 	{
 		updatestatus = 0;
 		bitstatus ^= 1;
+		displayvalue[0] = minutes / 10;
+		displayvalue[1] = minutes - (minutes / 10) * 10;
+		displayvalue[2] = seconds / 10;
+		displayvalue[3] = seconds - (seconds / 10) * 10;
+		TM1637_Update_Data_Dots(displayvalue, bitstatus);
+	}
+	if(updatetimings == 1)
+	{
+		updatetimings = 0;
+		bitstatus ^= 1;
+		minutes = pomodorominutetimings[operationsmonitor];
+		seconds = pomodorosecondstimings[operationsmonitor];
 		displayvalue[0] = minutes / 10;
 		displayvalue[1] = minutes - (minutes / 10) * 10;
 		displayvalue[2] = seconds / 10;
