@@ -6,19 +6,16 @@ A compact and handheld Pomodoro Timer built using an STM32 microcontroller, TM16
 
 ## 🧠 Features
 
-- ⏱️ Pomodoro Mode: 25 minutes of focus time
-- ☕ Short Break: 5 minutes
-- 😌 Long Break: 15 minutes (after 4 Pomodoros)
-- 🔘 2 Push Buttons:
+- ⏱️ Pomodoro Mode(P): 25 minutes of focus time
+- ☕ Short Break(S): 5 minutes
+- 😌 Long Break(L): 15 minutes (after 4 Pomodoros)
+- 2 Push Buttons:
   - Button 1: Start/Stop/Reset
   - Button 2: Cycle Modes (P/S/L)
-- 🔊 Buzzer for notifications (end of session, low battery)
-- 🔋 Powered by 2x 18650 Li-ion with BMS protection
-- 🔌 USB Charging (Micro-USB/USB-C)
-- 🔄 Battery monitoring via ADC
-- 💡 TM1637 4-digit 7-segment display
-- 💤 Low-power sleep mode
-- 🖐️ Pocket-sized, portable enclosure
+- Buzzer for notifications (end of session, low battery)
+- Powered by 2x 18650 Li-ion with BMS protection
+- USB Charging (Micro-USB/USB-C)
+- TM1637 4-digit 7-segment display
 
 ---
 
@@ -56,6 +53,9 @@ A compact and handheld Pomodoro Timer built using an STM32 microcontroller, TM16
 - [ ] Add various tones for notifications
 - [ ] Add BLE support for app notifications
 - [ ] Configurable timer durations via USB
+- [ ] Battery monitoring via ADC
+- [ ] Low-power sleep mode
+- [ ] Pocket-sized, portable enclosure
 
 ---
 
