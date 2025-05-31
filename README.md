@@ -27,7 +27,7 @@ A compact and handheld Pomodoro Timer built using an STM32 microcontroller, TM16
 | Component       | Description                          |
 |----------------|--------------------------------------|
 | STM32 MCU      | STM32F0xx / STM32G0xx series         |
-| Display        | TM1637 4-digit 7-segment module       |
+| Display        | TM1637 4-digit 7-segment module      |
 | Buzzer         | Active piezo buzzer                  |
 | Switches       | 2x Tactile push buttons              |
 | Battery        | 2x 18650 Li-ion cells                |
