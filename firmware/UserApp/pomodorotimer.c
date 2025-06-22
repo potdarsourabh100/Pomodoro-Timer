@@ -27,7 +27,8 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  *
  * Author:          Sourabh Potdar
- * Version:         V1.0.0
+ * Version:         V1.0.1
+ * Fixes:           22-06-2025 The timer was not performing correct mode in the proper order fixed
  */
 /*****************************************************************************/
 /* Include Files                                                             */
@@ -214,15 +215,14 @@ void buttonFunctionDebounce(void)
             		if(glbPomodoroCycles == 8)
             		{
             			glbModeSelection = PomodoroFunctions_LongBreak;
+            			glbCurrentModeTime = LONGBREAK_TIME;
             			glbPomodoroCycles = 0;
             		}
             		else
             		{
             			glbModeSelection = PomodoroFunctions_PomodoroMode;
+            			glbCurrentModeTime = POMODOROMODE_TIME;
             		}
-
-            		glbCurrentModeTime = LONGBREAK_TIME;
-
             	}
             	else if(glbModeSelection == PomodoroFunctions_LongBreak)
             	{
@@ -275,15 +275,14 @@ void updateDisplay(void)
         		if(glbPomodoroCycles == 8)
         		{
         			glbModeSelection = PomodoroFunctions_LongBreak;
+        			glbCurrentModeTime = LONGBREAK_TIME;
         			glbPomodoroCycles = 0;
         		}
         		else
         		{
         			glbModeSelection = PomodoroFunctions_PomodoroMode;
+        			glbCurrentModeTime = POMODOROMODE_TIME;
         		}
-
-        		glbCurrentModeTime = LONGBREAK_TIME;
-
         	}
         	else if(glbModeSelection == PomodoroFunctions_LongBreak)
         	{

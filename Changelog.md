@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 
 ---
+## [1.0.1] - 2025-06-22
+### 🐞 Bug fix
+- The timer was not performing correct mode in the proper order
+fixed
+### ⚠️ Warning/Notice
+- Button-related activities are started.
+- The pause function is yet to be added.
+- Buzzer hardware not yet added.
+### 💤 Power/Performance
+- Although the initial performance looks good
+Power-related activities are yet to be tested thoroughly.
 
 ## [1.0.0] - 2025-06-22
 ### 🚀 Initial Release
@@ -12,7 +23,7 @@ All notable changes to this project will be documented in this file.
 - The pause function is yet to be added.
 - Buzzer hardware not yet added.
 ### 💤 Power/Performance
-- Although initial performance looks good
+- Although the initial performance looks good
 Power-related activities are yet to be tested thoroughly.
 
 ## Legend

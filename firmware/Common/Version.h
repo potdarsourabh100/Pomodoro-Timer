@@ -51,7 +51,25 @@
  *
  *  Date          FirmWare  File Changed            File V/R    Programmer          Description
  * *-------------*---------*-----------------------*-----------*-------------------*---------------------------------------------------------------------------------------
+ * 22-06-2025     1.0.0     All Files               1.0.0        Sourabh Potdar     🚀 Initial Release
+																					- Core Pomodoro functionality (25/5/15 minute cycles)
+																				    ⚠️ Warning/Notice
+																					- Button-related activities are started.
+																					- The pause function is yet to be added.
+																					- Buzzer hardware not yet added.
+																					💤 Power/Performance
+																					- Although initial performance looks good
+																					- Power-related activities are yet to be tested thoroughly.
+ * 22-06-2025     1.0.1     pomodorotimer.c         1.0.1        Sourabh Potdar     🐞 Bug fix
+																					- The timer was not performing correct mode in the proper order fixed
+																					⚠️ Warning/Notice
+																					- Button-related activities are started.
+																					- The pause function is yet to be added.
+																					- Buzzer hardware not yet added.
+																					💤 Power/Performance
+																					- Although the initial performance looks good
+																					Power-related activities are yet to be tested thoroughly.
+ *
 */
-
 
 #endif /* VERSION_H_ */
