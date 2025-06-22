@@ -5,47 +5,47 @@ Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
   0 .isr_vector   00000194  08000000  08000000  00001000  2**0
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  1 .text         0000268c  08000194  08000194  00001194  2**2
+  1 .text         00002710  08000194  08000194  00001194  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .rodata       0000001c  08002820  08002820  00003820  2**2
+  2 .rodata       0000001c  080028a4  080028a4  000038a4  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .ARM.extab    00000000  0800283c  0800283c  00004018  2**0
+  3 .ARM.extab    00000000  080028c0  080028c0  00004018  2**0
                   CONTENTS, READONLY
-  4 .ARM          00000008  0800283c  0800283c  0000383c  2**2
+  4 .ARM          00000008  080028c0  080028c0  000038c0  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  5 .preinit_array 00000000  08002844  08002844  00004018  2**0
+  5 .preinit_array 00000000  080028c8  080028c8  00004018  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .init_array   00000004  08002844  08002844  00003844  2**2
+  6 .init_array   00000004  080028c8  080028c8  000038c8  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  7 .fini_array   00000004  08002848  08002848  00003848  2**2
+  7 .fini_array   00000004  080028cc  080028cc  000038cc  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  8 .data         00000018  20000000  0800284c  00004000  2**3
+  8 .data         00000018  20000000  080028d0  00004000  2**3
                   CONTENTS, ALLOC, LOAD, DATA
-  9 .bss          000000ac  20000018  08002864  00004018  2**3
+  9 .bss          000000ac  20000018  080028e8  00004018  2**3
                   ALLOC
- 10 ._user_heap_stack 00000604  200000c4  08002864  000040c4  2**0
+ 10 ._user_heap_stack 00000604  200000c4  080028e8  000040c4  2**0
                   ALLOC
  11 .ARM.attributes 00000030  00000000  00000000  00004018  2**0
                   CONTENTS, READONLY
- 12 .debug_info   00009785  00000000  00000000  00004048  2**0
+ 12 .debug_info   0000979d  00000000  00000000  00004048  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_abbrev 00001a61  00000000  00000000  0000d7cd  2**0
+ 13 .debug_abbrev 00001ae2  00000000  00000000  0000d7e5  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_aranges 00000a30  00000000  00000000  0000f230  2**3
+ 14 .debug_aranges 00000a30  00000000  00000000  0000f2c8  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_rnglists 000007d4  00000000  00000000  0000fc60  2**0
+ 15 .debug_rnglists 000007d4  00000000  00000000  0000fcf8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  0001666f  00000000  00000000  00010434  2**0
+ 16 .debug_macro  0001667a  00000000  00000000  000104cc  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0000be68  00000000  00000000  00026aa3  2**0
+ 17 .debug_line   0000be82  00000000  00000000  00026b46  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    0008b981  00000000  00000000  0003290b  2**0
+ 18 .debug_str    0008b981  00000000  00000000  000329c8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  000be28c  2**0
+ 19 .comment      00000043  00000000  00000000  000be349  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  000029ec  00000000  00000000  000be2d0  2**2
+ 20 .debug_frame  000029ec  00000000  00000000  000be38c  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 0000007a  00000000  00000000  000c0cbc  2**0
+ 21 .debug_line_str 0000007a  00000000  00000000  000c0d78  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -64,7 +64,7 @@ Disassembly of section .text:
  80001aa:	bd10      	pop	{r4, pc}
  80001ac:	20000018 	.word	0x20000018
  80001b0:	00000000 	.word	0x00000000
- 80001b4:	08002808 	.word	0x08002808
+ 80001b4:	0800288c 	.word	0x0800288c
 
 080001b8 <frame_dummy>:
  80001b8:	b508      	push	{r3, lr}
@@ -76,7 +76,7 @@ Disassembly of section .text:
  80001c6:	bd08      	pop	{r3, pc}
  80001c8:	00000000 	.word	0x00000000
  80001cc:	2000001c 	.word	0x2000001c
- 80001d0:	08002808 	.word	0x08002808
+ 80001d0:	0800288c 	.word	0x0800288c
 
 080001d4 <__aeabi_uldivmod>:
  80001d4:	b953      	cbnz	r3, 80001ec <__aeabi_uldivmod+0x18>
@@ -415,7 +415,7 @@ int main(void)
  8000524:	f000 fd66 	bl	8000ff4 <HAL_GPIO_WritePin>
 
   userMain();
- 8000528:	f002 f932 	bl	8002790 <userMain>
+ 8000528:	f002 f952 	bl	80027d0 <userMain>
   {
     /* USER CODE END WHILE */
 
@@ -449,7 +449,7 @@ void SystemClock_Config(void)
  8000552:	2230      	movs	r2, #48	@ 0x30
  8000554:	2100      	movs	r1, #0
  8000556:	4618      	mov	r0, r3
- 8000558:	f002 f92a 	bl	80027b0 <memset>
+ 8000558:	f002 f96c 	bl	8002834 <memset>
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
  800055c:	f107 030c 	add.w	r3, r7, #12
  8000560:	2200      	movs	r2, #0
@@ -1267,7 +1267,7 @@ LoopFillZerobss:
 
 /* Call static constructors */
     bl __libc_init_array
- 8000946:	f001 ff3b 	bl	80027c0 <__libc_init_array>
+ 8000946:	f001 ff7d 	bl	8002844 <__libc_init_array>
 /* Call the application's entry point.*/
   bl  main
  800094a:	f7ff fdd9 	bl	8000500 <main>
@@ -1280,7 +1280,7 @@ LoopFillZerobss:
   ldr r1, =_edata
  8000958:	20000018 	.word	0x20000018
   ldr r2, =_sidata
- 800095c:	0800284c 	.word	0x0800284c
+ 800095c:	080028d0 	.word	0x080028d0
   ldr r2, =_sbss
  8000960:	20000018 	.word	0x20000018
   ldr r4, =_ebss
@@ -3756,7 +3756,7 @@ HAL_StatusTypeDef HAL_RCC_ClockConfig(const RCC_ClkInitTypeDef  *RCC_ClkInitStru
  8001702:	bf00      	nop
  8001704:	40023c00 	.word	0x40023c00
  8001708:	40023800 	.word	0x40023800
- 800170c:	08002820 	.word	0x08002820
+ 800170c:	080028a4 	.word	0x080028a4
  8001710:	20000000 	.word	0x20000000
  8001714:	20000004 	.word	0x20000004
 
@@ -5640,10 +5640,10 @@ __weak void HAL_TIMEx_BreakCallback(TIM_HandleTypeDef *htim)
  800217a:	4770      	bx	lr
 
 0800217c <delay_Us>:
-
-/*****************************************************************************/
-/* TM1637 Functions                                                          */
-/*****************************************************************************/
+ *       for precise timing.
+ *
+ * @warning Delay accuracy is affected by compiler optimization and CPU speed.
+ *****************************************************************************/
 void delay_Us(int time)
 {
  800217c:	b480      	push	{r7}
@@ -5687,6 +5687,10 @@ void delay_Us(int time)
 	...
 
 080021bc <TM1637_Start>:
+ * @note Must be called before sending data to TM1637.
+ *
+ * @see TM1637_Stop(), TM1637_WriteByte()
+ *****************************************************************************/
 void TM1637_Start (void)
 {
  80021bc:	b580      	push	{r7, lr}
@@ -5717,7 +5721,10 @@ void TM1637_Start (void)
  80021f0:	40020400 	.word	0x40020400
 
 080021f4 <TM1637_Stop>:
-
+ * @note Must be called after completing any TM1637 data transmission.
+ *
+ * @see TM1637_Start(), TM1637_WriteByte()
+ *****************************************************************************/
 void TM1637_Stop (void)
 {
  80021f4:	b580      	push	{r7, lr}
@@ -5758,7 +5765,10 @@ void TM1637_Stop (void)
  8002240:	40020400 	.word	0x40020400
 
 08002244 <TM1637_WaitForAck>:
-
+ * @warning TM1637 does not return a readable ACK signal on all boards.
+ *
+ * @see TM1637_WriteByte()
+ *****************************************************************************/
 void TM1637_WaitForAck (void)
 {
  8002244:	b580      	push	{r7, lr}
@@ -5791,7 +5801,10 @@ void TM1637_WaitForAck (void)
  800227c:	40020400 	.word	0x40020400
 
 08002280 <TM1637_WriteByte>:
-
+ * @note Called in sequences to send data or commands to TM1637.
+ *
+ * @see TM1637_Start(), TM1637_WaitForAck()
+ *****************************************************************************/
 void TM1637_WriteByte (uint8_t byte)
 {
  8002280:	b580      	push	{r7, lr}
@@ -5863,10 +5876,10 @@ void TM1637_WriteByte (uint8_t byte)
  80022f4:	40020400 	.word	0x40020400
 
 080022f8 <TM1637_Convert_To_Digits>:
-		TM1637_WaitForAck();
-		TM1637_Stop();
-}
-
+ * @note Used before sending data to TM1637 to prepare digit format.
+ *
+ * @see TM1637_WriteData()
+ *****************************************************************************/
 void TM1637_Convert_To_Digits(uint32_t values, uint8_t digits[4])
 {
  80022f8:	b480      	push	{r7}
@@ -5892,7 +5905,7 @@ void TM1637_Convert_To_Digits(uint32_t values, uint8_t digits[4])
  8002320:	1ad3      	subs	r3, r2, r3
  8002322:	60bb      	str	r3, [r7, #8]
 
-    digits[0] = minutes / 10;        // Tens place of minutes
+    digits[0] = minutes / 10;        /* Tens place of minutes*/
  8002324:	68fb      	ldr	r3, [r7, #12]
  8002326:	4a1a      	ldr	r2, [pc, #104]	@ (8002390 <TM1637_Convert_To_Digits+0x98>)
  8002328:	fba2 2303 	umull	r2, r3, r2, r3
@@ -5900,7 +5913,7 @@ void TM1637_Convert_To_Digits(uint32_t values, uint8_t digits[4])
  800232e:	b2da      	uxtb	r2, r3
  8002330:	683b      	ldr	r3, [r7, #0]
  8002332:	701a      	strb	r2, [r3, #0]
-    digits[1] = minutes % 10;        // Ones place of minutes
+    digits[1] = minutes % 10;        /* Ones place of minutes*/
  8002334:	68f9      	ldr	r1, [r7, #12]
  8002336:	4b16      	ldr	r3, [pc, #88]	@ (8002390 <TM1637_Convert_To_Digits+0x98>)
  8002338:	fba3 2301 	umull	r2, r3, r3, r1
@@ -5914,7 +5927,7 @@ void TM1637_Convert_To_Digits(uint32_t values, uint8_t digits[4])
  800234a:	3301      	adds	r3, #1
  800234c:	b2d2      	uxtb	r2, r2
  800234e:	701a      	strb	r2, [r3, #0]
-    digits[2] = seconds / 10;        // Tens place of seconds
+    digits[2] = seconds / 10;        /* Tens place of seconds*/
  8002350:	68bb      	ldr	r3, [r7, #8]
  8002352:	4a0f      	ldr	r2, [pc, #60]	@ (8002390 <TM1637_Convert_To_Digits+0x98>)
  8002354:	fba2 2303 	umull	r2, r3, r2, r3
@@ -5923,7 +5936,7 @@ void TM1637_Convert_To_Digits(uint32_t values, uint8_t digits[4])
  800235c:	3302      	adds	r3, #2
  800235e:	b2d2      	uxtb	r2, r2
  8002360:	701a      	strb	r2, [r3, #0]
-    digits[3] = seconds % 10;        // Ones place of seconds
+    digits[3] = seconds % 10;        /* Ones place of seconds*/
  8002362:	68b9      	ldr	r1, [r7, #8]
  8002364:	4b0a      	ldr	r3, [pc, #40]	@ (8002390 <TM1637_Convert_To_Digits+0x98>)
  8002366:	fba3 2301 	umull	r2, r3, r3, r1
@@ -5948,6 +5961,9 @@ void TM1637_Convert_To_Digits(uint32_t values, uint8_t digits[4])
  8002390:	cccccccd 	.word	0xcccccccd
 
 08002394 <TM1637_Update_Data_Dots>:
+ * @see TM1637_Write(), TM1637_WriteDisplayCommand()
+ *****************************************************************************/
+void TM1637_Update_Data_Dots(uint8_t *displayvalue, uint8_t status);
 
 void TM1637_Update_Data_Dots(uint8_t *displayvalue, uint8_t status)
 {
@@ -6064,13 +6080,13 @@ void TM1637_Update_Data_Dots(uint8_t *displayvalue, uint8_t status)
  800244e:	46bd      	mov	sp, r7
  8002450:	bd80      	pop	{r7, pc}
  8002452:	bf00      	nop
- 8002454:	08002830 	.word	0x08002830
+ 8002454:	080028b4 	.word	0x080028b4
 
 08002458 <buttonControlDebounce>:
-uint8_t glbPomodoroCycles = 0;
-/*****************************************************************************/
-/* User Function                                                             */
-/*****************************************************************************/
+ *          handle timer errors through Error_Handler().
+ *
+ * @see HAL_GPIO_ReadPin(), HAL_TIM_Base_Start_IT(), HAL_TIM_Base_Stop_IT()
+ *****************************************************************************/
 void buttonControlDebounce(void)
 {
  8002458:	b5b0      	push	{r4, r5, r7, lr}
@@ -6082,567 +6098,654 @@ void buttonControlDebounce(void)
 
 	uint8_t tempButtonReading = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0); /* read the state of the switch into a local variable */
  800245e:	2101      	movs	r1, #1
- 8002460:	482f      	ldr	r0, [pc, #188]	@ (8002520 <buttonControlDebounce+0xc8>)
+ 8002460:	483c      	ldr	r0, [pc, #240]	@ (8002554 <buttonControlDebounce+0xfc>)
  8002462:	f7fe fdaf 	bl	8000fc4 <HAL_GPIO_ReadPin>
  8002466:	4603      	mov	r3, r0
  8002468:	71fb      	strb	r3, [r7, #7]
+	/** GPIO_PIN_0 is the control button used to start/stop the Pomodoro timer **/
 
     if(tempButtonReading != glbLastButtonState) /* If the switch changed, due to noise or pressing */
- 800246a:	4b2e      	ldr	r3, [pc, #184]	@ (8002524 <buttonControlDebounce+0xcc>)
+ 800246a:	4b3b      	ldr	r3, [pc, #236]	@ (8002558 <buttonControlDebounce+0x100>)
  800246c:	781b      	ldrb	r3, [r3, #0]
  800246e:	79fa      	ldrb	r2, [r7, #7]
  8002470:	429a      	cmp	r2, r3
  8002472:	d005      	beq.n	8002480 <buttonControlDebounce+0x28>
     {
         glbLastDebounceTime = glbSysTicks; /* reset the debouncing timer */
- 8002474:	4b2c      	ldr	r3, [pc, #176]	@ (8002528 <buttonControlDebounce+0xd0>)
+ 8002474:	4b39      	ldr	r3, [pc, #228]	@ (800255c <buttonControlDebounce+0x104>)
  8002476:	e9d3 2300 	ldrd	r2, r3, [r3]
- 800247a:	492c      	ldr	r1, [pc, #176]	@ (800252c <buttonControlDebounce+0xd4>)
+ 800247a:	4939      	ldr	r1, [pc, #228]	@ (8002560 <buttonControlDebounce+0x108>)
  800247c:	e9c1 2300 	strd	r2, r3, [r1]
     }
+
     if((glbSysTicks - glbLastDebounceTime) > DEBOUNCEDELAY)
- 8002480:	4b29      	ldr	r3, [pc, #164]	@ (8002528 <buttonControlDebounce+0xd0>)
+ 8002480:	4b36      	ldr	r3, [pc, #216]	@ (800255c <buttonControlDebounce+0x104>)
  8002482:	e9d3 0100 	ldrd	r0, r1, [r3]
- 8002486:	4b29      	ldr	r3, [pc, #164]	@ (800252c <buttonControlDebounce+0xd4>)
+ 8002486:	4b36      	ldr	r3, [pc, #216]	@ (8002560 <buttonControlDebounce+0x108>)
  8002488:	e9d3 2300 	ldrd	r2, r3, [r3]
  800248c:	1a84      	subs	r4, r0, r2
  800248e:	eb61 0503 	sbc.w	r5, r1, r3
  8002492:	2c15      	cmp	r4, #21
  8002494:	f175 0300 	sbcs.w	r3, r5, #0
- 8002498:	d33b      	bcc.n	8002512 <buttonControlDebounce+0xba>
+ 8002498:	d355      	bcc.n	8002546 <buttonControlDebounce+0xee>
     {
         if(tempButtonReading != glbButtonState)
- 800249a:	4b25      	ldr	r3, [pc, #148]	@ (8002530 <buttonControlDebounce+0xd8>)
+ 800249a:	4b32      	ldr	r3, [pc, #200]	@ (8002564 <buttonControlDebounce+0x10c>)
  800249c:	781b      	ldrb	r3, [r3, #0]
  800249e:	79fa      	ldrb	r2, [r7, #7]
  80024a0:	429a      	cmp	r2, r3
- 80024a2:	d036      	beq.n	8002512 <buttonControlDebounce+0xba>
+ 80024a2:	d050      	beq.n	8002546 <buttonControlDebounce+0xee>
         {
             glbButtonState = tempButtonReading;
- 80024a4:	4a22      	ldr	r2, [pc, #136]	@ (8002530 <buttonControlDebounce+0xd8>)
+ 80024a4:	4a2f      	ldr	r2, [pc, #188]	@ (8002564 <buttonControlDebounce+0x10c>)
  80024a6:	79fb      	ldrb	r3, [r7, #7]
  80024a8:	7013      	strb	r3, [r2, #0]
-            if(glbButtonState == GPIO_PIN_RESET)
- 80024aa:	4b21      	ldr	r3, [pc, #132]	@ (8002530 <buttonControlDebounce+0xd8>)
+            if(glbButtonState == GPIO_PIN_RESET) /** Button is pressed **/
+ 80024aa:	4b2e      	ldr	r3, [pc, #184]	@ (8002564 <buttonControlDebounce+0x10c>)
  80024ac:	781b      	ldrb	r3, [r3, #0]
  80024ae:	2b00      	cmp	r3, #0
- 80024b0:	d12f      	bne.n	8002512 <buttonControlDebounce+0xba>
+ 80024b0:	d149      	bne.n	8002546 <buttonControlDebounce+0xee>
             {
             	if(glbTimerState == false)
- 80024b2:	4b20      	ldr	r3, [pc, #128]	@ (8002534 <buttonControlDebounce+0xdc>)
+ 80024b2:	4b2d      	ldr	r3, [pc, #180]	@ (8002568 <buttonControlDebounce+0x110>)
  80024b4:	781b      	ldrb	r3, [r3, #0]
  80024b6:	f083 0301 	eor.w	r3, r3, #1
  80024ba:	b2db      	uxtb	r3, r3
  80024bc:	2b00      	cmp	r3, #0
- 80024be:	d012      	beq.n	80024e6 <buttonControlDebounce+0x8e>
+ 80024be:	d01f      	beq.n	8002500 <buttonControlDebounce+0xa8>
             	{
             		/* Start counting seconds*/
                     glbSecondCounter = 0;
- 80024c0:	491d      	ldr	r1, [pc, #116]	@ (8002538 <buttonControlDebounce+0xe0>)
+ 80024c0:	492a      	ldr	r1, [pc, #168]	@ (800256c <buttonControlDebounce+0x114>)
  80024c2:	f04f 0200 	mov.w	r2, #0
  80024c6:	f04f 0300 	mov.w	r3, #0
  80024ca:	e9c1 2300 	strd	r2, r3, [r1]
 
-            		glbTimerState = true;
- 80024ce:	4b19      	ldr	r3, [pc, #100]	@ (8002534 <buttonControlDebounce+0xdc>)
- 80024d0:	2201      	movs	r2, #1
+                    /*Reset Mode counter*/
+                    glbModeSelection = PomodoroFunctions_PomodoroMode;
+ 80024ce:	4b28      	ldr	r3, [pc, #160]	@ (8002570 <buttonControlDebounce+0x118>)
+ 80024d0:	2200      	movs	r2, #0
  80024d2:	701a      	strb	r2, [r3, #0]
+
+                    /* Reset Time selection*/
+                    glbCurrentModeTime = POMODOROMODE_TIME;
+ 80024d4:	4927      	ldr	r1, [pc, #156]	@ (8002574 <buttonControlDebounce+0x11c>)
+ 80024d6:	f240 52dc 	movw	r2, #1500	@ 0x5dc
+ 80024da:	f04f 0300 	mov.w	r3, #0
+ 80024de:	e9c1 2300 	strd	r2, r3, [r1]
+
+                    /*Reset Pomodoro Cycles*/
+                    glbPomodoroCycles = 0;
+ 80024e2:	4b25      	ldr	r3, [pc, #148]	@ (8002578 <buttonControlDebounce+0x120>)
+ 80024e4:	2200      	movs	r2, #0
+ 80024e6:	701a      	strb	r2, [r3, #0]
+
+            		glbTimerState = true;
+ 80024e8:	4b1f      	ldr	r3, [pc, #124]	@ (8002568 <buttonControlDebounce+0x110>)
+ 80024ea:	2201      	movs	r2, #1
+ 80024ec:	701a      	strb	r2, [r3, #0]
             		/* Start The timer */
             	    if (HAL_TIM_Base_Start_IT(&htim3) != HAL_OK)
- 80024d4:	4819      	ldr	r0, [pc, #100]	@ (800253c <buttonControlDebounce+0xe4>)
- 80024d6:	f7ff fa35 	bl	8001944 <HAL_TIM_Base_Start_IT>
- 80024da:	4603      	mov	r3, r0
- 80024dc:	2b00      	cmp	r3, #0
- 80024de:	d018      	beq.n	8002512 <buttonControlDebounce+0xba>
+ 80024ee:	4823      	ldr	r0, [pc, #140]	@ (800257c <buttonControlDebounce+0x124>)
+ 80024f0:	f7ff fa28 	bl	8001944 <HAL_TIM_Base_Start_IT>
+ 80024f4:	4603      	mov	r3, r0
+ 80024f6:	2b00      	cmp	r3, #0
+ 80024f8:	d025      	beq.n	8002546 <buttonControlDebounce+0xee>
             		{
             		  /* Starting Error */
             		  Error_Handler();
- 80024e0:	f7fe f962 	bl	80007a8 <Error_Handler>
- 80024e4:	e015      	b.n	8002512 <buttonControlDebounce+0xba>
+ 80024fa:	f7fe f955 	bl	80007a8 <Error_Handler>
+ 80024fe:	e022      	b.n	8002546 <buttonControlDebounce+0xee>
             		}
             	}
             	else if(glbTimerState == true)
- 80024e6:	4b13      	ldr	r3, [pc, #76]	@ (8002534 <buttonControlDebounce+0xdc>)
- 80024e8:	781b      	ldrb	r3, [r3, #0]
- 80024ea:	2b00      	cmp	r3, #0
- 80024ec:	d011      	beq.n	8002512 <buttonControlDebounce+0xba>
+ 8002500:	4b19      	ldr	r3, [pc, #100]	@ (8002568 <buttonControlDebounce+0x110>)
+ 8002502:	781b      	ldrb	r3, [r3, #0]
+ 8002504:	2b00      	cmp	r3, #0
+ 8002506:	d01e      	beq.n	8002546 <buttonControlDebounce+0xee>
 				{
             		/* Start counting seconds*/
                     glbSecondCounter = 0;
- 80024ee:	4912      	ldr	r1, [pc, #72]	@ (8002538 <buttonControlDebounce+0xe0>)
- 80024f0:	f04f 0200 	mov.w	r2, #0
- 80024f4:	f04f 0300 	mov.w	r3, #0
- 80024f8:	e9c1 2300 	strd	r2, r3, [r1]
+ 8002508:	4918      	ldr	r1, [pc, #96]	@ (800256c <buttonControlDebounce+0x114>)
+ 800250a:	f04f 0200 	mov.w	r2, #0
+ 800250e:	f04f 0300 	mov.w	r3, #0
+ 8002512:	e9c1 2300 	strd	r2, r3, [r1]
+
+                    /*Reset Mode counter*/
+                    glbModeSelection = PomodoroFunctions_PomodoroMode;
+ 8002516:	4b16      	ldr	r3, [pc, #88]	@ (8002570 <buttonControlDebounce+0x118>)
+ 8002518:	2200      	movs	r2, #0
+ 800251a:	701a      	strb	r2, [r3, #0]
+
+                    /* Reset Time selection*/
+                    glbCurrentModeTime = POMODOROMODE_TIME;
+ 800251c:	4915      	ldr	r1, [pc, #84]	@ (8002574 <buttonControlDebounce+0x11c>)
+ 800251e:	f240 52dc 	movw	r2, #1500	@ 0x5dc
+ 8002522:	f04f 0300 	mov.w	r3, #0
+ 8002526:	e9c1 2300 	strd	r2, r3, [r1]
+
+                    /*Reset Pomodoro Cycles*/
+                    glbPomodoroCycles = 0;
+ 800252a:	4b13      	ldr	r3, [pc, #76]	@ (8002578 <buttonControlDebounce+0x120>)
+ 800252c:	2200      	movs	r2, #0
+ 800252e:	701a      	strb	r2, [r3, #0]
 
             		glbTimerState = false;
- 80024fc:	4b0d      	ldr	r3, [pc, #52]	@ (8002534 <buttonControlDebounce+0xdc>)
- 80024fe:	2200      	movs	r2, #0
- 8002500:	701a      	strb	r2, [r3, #0]
+ 8002530:	4b0d      	ldr	r3, [pc, #52]	@ (8002568 <buttonControlDebounce+0x110>)
+ 8002532:	2200      	movs	r2, #0
+ 8002534:	701a      	strb	r2, [r3, #0]
                 	/* Stop The timer */
                    if (HAL_TIM_Base_Stop_IT(&htim3) != HAL_OK)
- 8002502:	480e      	ldr	r0, [pc, #56]	@ (800253c <buttonControlDebounce+0xe4>)
- 8002504:	f7ff fa80 	bl	8001a08 <HAL_TIM_Base_Stop_IT>
- 8002508:	4603      	mov	r3, r0
- 800250a:	2b00      	cmp	r3, #0
- 800250c:	d001      	beq.n	8002512 <buttonControlDebounce+0xba>
+ 8002536:	4811      	ldr	r0, [pc, #68]	@ (800257c <buttonControlDebounce+0x124>)
+ 8002538:	f7ff fa66 	bl	8001a08 <HAL_TIM_Base_Stop_IT>
+ 800253c:	4603      	mov	r3, r0
+ 800253e:	2b00      	cmp	r3, #0
+ 8002540:	d001      	beq.n	8002546 <buttonControlDebounce+0xee>
                    {
                 	   /* Stopping Error */
                 	   Error_Handler();
- 800250e:	f7fe f94b 	bl	80007a8 <Error_Handler>
-
+ 8002542:	f7fe f931 	bl	80007a8 <Error_Handler>
+                   }
 				}
             }
         }
     }
-    glbLastButtonState = tempButtonReading;
- 8002512:	4a04      	ldr	r2, [pc, #16]	@ (8002524 <buttonControlDebounce+0xcc>)
- 8002514:	79fb      	ldrb	r3, [r7, #7]
- 8002516:	7013      	strb	r3, [r2, #0]
+    glbLastButtonState = tempButtonReading; /** Store current reading for comparison in next cycle **/
+ 8002546:	4a04      	ldr	r2, [pc, #16]	@ (8002558 <buttonControlDebounce+0x100>)
+ 8002548:	79fb      	ldrb	r3, [r7, #7]
+ 800254a:	7013      	strb	r3, [r2, #0]
 }
- 8002518:	bf00      	nop
- 800251a:	3708      	adds	r7, #8
- 800251c:	46bd      	mov	sp, r7
- 800251e:	bdb0      	pop	{r4, r5, r7, pc}
- 8002520:	40020000 	.word	0x40020000
- 8002524:	200000a0 	.word	0x200000a0
- 8002528:	20000088 	.word	0x20000088
- 800252c:	200000a8 	.word	0x200000a8
- 8002530:	200000b0 	.word	0x200000b0
- 8002534:	2000009d 	.word	0x2000009d
- 8002538:	20000080 	.word	0x20000080
- 800253c:	20000034 	.word	0x20000034
+ 800254c:	bf00      	nop
+ 800254e:	3708      	adds	r7, #8
+ 8002550:	46bd      	mov	sp, r7
+ 8002552:	bdb0      	pop	{r4, r5, r7, pc}
+ 8002554:	40020000 	.word	0x40020000
+ 8002558:	200000a0 	.word	0x200000a0
+ 800255c:	20000088 	.word	0x20000088
+ 8002560:	200000a8 	.word	0x200000a8
+ 8002564:	200000b0 	.word	0x200000b0
+ 8002568:	2000009d 	.word	0x2000009d
+ 800256c:	20000080 	.word	0x20000080
+ 8002570:	2000009e 	.word	0x2000009e
+ 8002574:	20000010 	.word	0x20000010
+ 8002578:	2000009f 	.word	0x2000009f
+ 800257c:	20000034 	.word	0x20000034
 
-08002540 <buttonFunctionDebounce>:
-
+08002580 <buttonFunctionDebounce>:
+ *          and switches to a Long Break automatically.
+ *
+ * @see HAL_GPIO_ReadPin()
+ *****************************************************************************/
 void buttonFunctionDebounce(void)
 {
- 8002540:	b5b0      	push	{r4, r5, r7, lr}
- 8002542:	b082      	sub	sp, #8
- 8002544:	af00      	add	r7, sp, #0
+ 8002580:	b5b0      	push	{r4, r5, r7, lr}
+ 8002582:	b082      	sub	sp, #8
+ 8002584:	af00      	add	r7, sp, #0
 	static uintmax_t glbLastDebounceTime = 0;  /* The Last Time The Output Pin Was Toggled */
 	static uint8_t glbButtonState;            /* The Current Reading From The Input Pin */
 	static uint8_t glbLastButtonState = 0;    /* The previous reading from The Input Pin */
 
 	uint8_t tempButtonReading = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_1); /* read the state of the switch into a local variable */
- 8002546:	2102      	movs	r1, #2
- 8002548:	483c      	ldr	r0, [pc, #240]	@ (800263c <buttonFunctionDebounce+0xfc>)
- 800254a:	f7fe fd3b 	bl	8000fc4 <HAL_GPIO_ReadPin>
- 800254e:	4603      	mov	r3, r0
- 8002550:	71fb      	strb	r3, [r7, #7]
+ 8002586:	2102      	movs	r1, #2
+ 8002588:	483c      	ldr	r0, [pc, #240]	@ (800267c <buttonFunctionDebounce+0xfc>)
+ 800258a:	f7fe fd1b 	bl	8000fc4 <HAL_GPIO_ReadPin>
+ 800258e:	4603      	mov	r3, r0
+ 8002590:	71fb      	strb	r3, [r7, #7]
+	/** GPIO_PIN_1 is the function button used to switch between Pomodoro modes **/
 
     if(tempButtonReading != glbLastButtonState) /* If the switch changed, due to noise or pressing */
- 8002552:	4b3b      	ldr	r3, [pc, #236]	@ (8002640 <buttonFunctionDebounce+0x100>)
- 8002554:	781b      	ldrb	r3, [r3, #0]
- 8002556:	79fa      	ldrb	r2, [r7, #7]
- 8002558:	429a      	cmp	r2, r3
- 800255a:	d005      	beq.n	8002568 <buttonFunctionDebounce+0x28>
+ 8002592:	4b3b      	ldr	r3, [pc, #236]	@ (8002680 <buttonFunctionDebounce+0x100>)
+ 8002594:	781b      	ldrb	r3, [r3, #0]
+ 8002596:	79fa      	ldrb	r2, [r7, #7]
+ 8002598:	429a      	cmp	r2, r3
+ 800259a:	d005      	beq.n	80025a8 <buttonFunctionDebounce+0x28>
     {
         glbLastDebounceTime = glbSysTicks; /* reset the debouncing timer */
- 800255c:	4b39      	ldr	r3, [pc, #228]	@ (8002644 <buttonFunctionDebounce+0x104>)
- 800255e:	e9d3 2300 	ldrd	r2, r3, [r3]
- 8002562:	4939      	ldr	r1, [pc, #228]	@ (8002648 <buttonFunctionDebounce+0x108>)
- 8002564:	e9c1 2300 	strd	r2, r3, [r1]
+ 800259c:	4b39      	ldr	r3, [pc, #228]	@ (8002684 <buttonFunctionDebounce+0x104>)
+ 800259e:	e9d3 2300 	ldrd	r2, r3, [r3]
+ 80025a2:	4939      	ldr	r1, [pc, #228]	@ (8002688 <buttonFunctionDebounce+0x108>)
+ 80025a4:	e9c1 2300 	strd	r2, r3, [r1]
     }
+
     if((glbSysTicks - glbLastDebounceTime) > DEBOUNCEDELAY)
- 8002568:	4b36      	ldr	r3, [pc, #216]	@ (8002644 <buttonFunctionDebounce+0x104>)
- 800256a:	e9d3 0100 	ldrd	r0, r1, [r3]
- 800256e:	4b36      	ldr	r3, [pc, #216]	@ (8002648 <buttonFunctionDebounce+0x108>)
- 8002570:	e9d3 2300 	ldrd	r2, r3, [r3]
- 8002574:	1a84      	subs	r4, r0, r2
- 8002576:	eb61 0503 	sbc.w	r5, r1, r3
- 800257a:	2c15      	cmp	r4, #21
- 800257c:	f175 0300 	sbcs.w	r3, r5, #0
- 8002580:	d355      	bcc.n	800262e <buttonFunctionDebounce+0xee>
+ 80025a8:	4b36      	ldr	r3, [pc, #216]	@ (8002684 <buttonFunctionDebounce+0x104>)
+ 80025aa:	e9d3 0100 	ldrd	r0, r1, [r3]
+ 80025ae:	4b36      	ldr	r3, [pc, #216]	@ (8002688 <buttonFunctionDebounce+0x108>)
+ 80025b0:	e9d3 2300 	ldrd	r2, r3, [r3]
+ 80025b4:	1a84      	subs	r4, r0, r2
+ 80025b6:	eb61 0503 	sbc.w	r5, r1, r3
+ 80025ba:	2c15      	cmp	r4, #21
+ 80025bc:	f175 0300 	sbcs.w	r3, r5, #0
+ 80025c0:	d355      	bcc.n	800266e <buttonFunctionDebounce+0xee>
     {
         if(tempButtonReading != glbButtonState)
- 8002582:	4b32      	ldr	r3, [pc, #200]	@ (800264c <buttonFunctionDebounce+0x10c>)
- 8002584:	781b      	ldrb	r3, [r3, #0]
- 8002586:	79fa      	ldrb	r2, [r7, #7]
- 8002588:	429a      	cmp	r2, r3
- 800258a:	d050      	beq.n	800262e <buttonFunctionDebounce+0xee>
+ 80025c2:	4b32      	ldr	r3, [pc, #200]	@ (800268c <buttonFunctionDebounce+0x10c>)
+ 80025c4:	781b      	ldrb	r3, [r3, #0]
+ 80025c6:	79fa      	ldrb	r2, [r7, #7]
+ 80025c8:	429a      	cmp	r2, r3
+ 80025ca:	d050      	beq.n	800266e <buttonFunctionDebounce+0xee>
         {
             glbButtonState = tempButtonReading;
- 800258c:	4a2f      	ldr	r2, [pc, #188]	@ (800264c <buttonFunctionDebounce+0x10c>)
- 800258e:	79fb      	ldrb	r3, [r7, #7]
- 8002590:	7013      	strb	r3, [r2, #0]
-            if(glbButtonState == GPIO_PIN_RESET)
- 8002592:	4b2e      	ldr	r3, [pc, #184]	@ (800264c <buttonFunctionDebounce+0x10c>)
- 8002594:	781b      	ldrb	r3, [r3, #0]
- 8002596:	2b00      	cmp	r3, #0
- 8002598:	d149      	bne.n	800262e <buttonFunctionDebounce+0xee>
+ 80025cc:	4a2f      	ldr	r2, [pc, #188]	@ (800268c <buttonFunctionDebounce+0x10c>)
+ 80025ce:	79fb      	ldrb	r3, [r7, #7]
+ 80025d0:	7013      	strb	r3, [r2, #0]
+            if(glbButtonState == GPIO_PIN_RESET) /** Button is pressed **/
+ 80025d2:	4b2e      	ldr	r3, [pc, #184]	@ (800268c <buttonFunctionDebounce+0x10c>)
+ 80025d4:	781b      	ldrb	r3, [r3, #0]
+ 80025d6:	2b00      	cmp	r3, #0
+ 80025d8:	d149      	bne.n	800266e <buttonFunctionDebounce+0xee>
             {
             	glbSecondCounter = 0;
- 800259a:	492d      	ldr	r1, [pc, #180]	@ (8002650 <buttonFunctionDebounce+0x110>)
- 800259c:	f04f 0200 	mov.w	r2, #0
- 80025a0:	f04f 0300 	mov.w	r3, #0
- 80025a4:	e9c1 2300 	strd	r2, r3, [r1]
+ 80025da:	492d      	ldr	r1, [pc, #180]	@ (8002690 <buttonFunctionDebounce+0x110>)
+ 80025dc:	f04f 0200 	mov.w	r2, #0
+ 80025e0:	f04f 0300 	mov.w	r3, #0
+ 80025e4:	e9c1 2300 	strd	r2, r3, [r1]
             	if(glbModeSelection == PomodoroFunctions_PomodoroMode)
- 80025a8:	4b2a      	ldr	r3, [pc, #168]	@ (8002654 <buttonFunctionDebounce+0x114>)
- 80025aa:	781b      	ldrb	r3, [r3, #0]
- 80025ac:	2b00      	cmp	r3, #0
- 80025ae:	d110      	bne.n	80025d2 <buttonFunctionDebounce+0x92>
+ 80025e8:	4b2a      	ldr	r3, [pc, #168]	@ (8002694 <buttonFunctionDebounce+0x114>)
+ 80025ea:	781b      	ldrb	r3, [r3, #0]
+ 80025ec:	2b00      	cmp	r3, #0
+ 80025ee:	d110      	bne.n	8002612 <buttonFunctionDebounce+0x92>
             	{
             		glbModeSelection = PomodoroFunctions_ShortBreak;
- 80025b0:	4b28      	ldr	r3, [pc, #160]	@ (8002654 <buttonFunctionDebounce+0x114>)
- 80025b2:	2201      	movs	r2, #1
- 80025b4:	701a      	strb	r2, [r3, #0]
+ 80025f0:	4b28      	ldr	r3, [pc, #160]	@ (8002694 <buttonFunctionDebounce+0x114>)
+ 80025f2:	2201      	movs	r2, #1
+ 80025f4:	701a      	strb	r2, [r3, #0]
             		glbCurrentModeTime = SHORTBREAK_TIME;
- 80025b6:	4928      	ldr	r1, [pc, #160]	@ (8002658 <buttonFunctionDebounce+0x118>)
- 80025b8:	f44f 7296 	mov.w	r2, #300	@ 0x12c
- 80025bc:	f04f 0300 	mov.w	r3, #0
- 80025c0:	e9c1 2300 	strd	r2, r3, [r1]
+ 80025f6:	4928      	ldr	r1, [pc, #160]	@ (8002698 <buttonFunctionDebounce+0x118>)
+ 80025f8:	f44f 7296 	mov.w	r2, #300	@ 0x12c
+ 80025fc:	f04f 0300 	mov.w	r3, #0
+ 8002600:	e9c1 2300 	strd	r2, r3, [r1]
             		glbPomodoroCycles++;
- 80025c4:	4b25      	ldr	r3, [pc, #148]	@ (800265c <buttonFunctionDebounce+0x11c>)
- 80025c6:	781b      	ldrb	r3, [r3, #0]
- 80025c8:	3301      	adds	r3, #1
- 80025ca:	b2da      	uxtb	r2, r3
- 80025cc:	4b23      	ldr	r3, [pc, #140]	@ (800265c <buttonFunctionDebounce+0x11c>)
- 80025ce:	701a      	strb	r2, [r3, #0]
- 80025d0:	e02d      	b.n	800262e <buttonFunctionDebounce+0xee>
+ 8002604:	4b25      	ldr	r3, [pc, #148]	@ (800269c <buttonFunctionDebounce+0x11c>)
+ 8002606:	781b      	ldrb	r3, [r3, #0]
+ 8002608:	3301      	adds	r3, #1
+ 800260a:	b2da      	uxtb	r2, r3
+ 800260c:	4b23      	ldr	r3, [pc, #140]	@ (800269c <buttonFunctionDebounce+0x11c>)
+ 800260e:	701a      	strb	r2, [r3, #0]
+ 8002610:	e02d      	b.n	800266e <buttonFunctionDebounce+0xee>
             	}
             	else if(glbModeSelection == PomodoroFunctions_ShortBreak)
- 80025d2:	4b20      	ldr	r3, [pc, #128]	@ (8002654 <buttonFunctionDebounce+0x114>)
- 80025d4:	781b      	ldrb	r3, [r3, #0]
- 80025d6:	2b01      	cmp	r3, #1
- 80025d8:	d11b      	bne.n	8002612 <buttonFunctionDebounce+0xd2>
+ 8002612:	4b20      	ldr	r3, [pc, #128]	@ (8002694 <buttonFunctionDebounce+0x114>)
+ 8002614:	781b      	ldrb	r3, [r3, #0]
+ 8002616:	2b01      	cmp	r3, #1
+ 8002618:	d11b      	bne.n	8002652 <buttonFunctionDebounce+0xd2>
             	{
             		glbPomodoroCycles++;
- 80025da:	4b20      	ldr	r3, [pc, #128]	@ (800265c <buttonFunctionDebounce+0x11c>)
- 80025dc:	781b      	ldrb	r3, [r3, #0]
- 80025de:	3301      	adds	r3, #1
- 80025e0:	b2da      	uxtb	r2, r3
- 80025e2:	4b1e      	ldr	r3, [pc, #120]	@ (800265c <buttonFunctionDebounce+0x11c>)
- 80025e4:	701a      	strb	r2, [r3, #0]
+ 800261a:	4b20      	ldr	r3, [pc, #128]	@ (800269c <buttonFunctionDebounce+0x11c>)
+ 800261c:	781b      	ldrb	r3, [r3, #0]
+ 800261e:	3301      	adds	r3, #1
+ 8002620:	b2da      	uxtb	r2, r3
+ 8002622:	4b1e      	ldr	r3, [pc, #120]	@ (800269c <buttonFunctionDebounce+0x11c>)
+ 8002624:	701a      	strb	r2, [r3, #0]
             		if(glbPomodoroCycles == 8)
- 80025e6:	4b1d      	ldr	r3, [pc, #116]	@ (800265c <buttonFunctionDebounce+0x11c>)
- 80025e8:	781b      	ldrb	r3, [r3, #0]
- 80025ea:	2b08      	cmp	r3, #8
- 80025ec:	d106      	bne.n	80025fc <buttonFunctionDebounce+0xbc>
+ 8002626:	4b1d      	ldr	r3, [pc, #116]	@ (800269c <buttonFunctionDebounce+0x11c>)
+ 8002628:	781b      	ldrb	r3, [r3, #0]
+ 800262a:	2b08      	cmp	r3, #8
+ 800262c:	d106      	bne.n	800263c <buttonFunctionDebounce+0xbc>
             		{
             			glbModeSelection = PomodoroFunctions_LongBreak;
- 80025ee:	4b19      	ldr	r3, [pc, #100]	@ (8002654 <buttonFunctionDebounce+0x114>)
- 80025f0:	2202      	movs	r2, #2
- 80025f2:	701a      	strb	r2, [r3, #0]
+ 800262e:	4b19      	ldr	r3, [pc, #100]	@ (8002694 <buttonFunctionDebounce+0x114>)
+ 8002630:	2202      	movs	r2, #2
+ 8002632:	701a      	strb	r2, [r3, #0]
             			glbPomodoroCycles = 0;
- 80025f4:	4b19      	ldr	r3, [pc, #100]	@ (800265c <buttonFunctionDebounce+0x11c>)
- 80025f6:	2200      	movs	r2, #0
- 80025f8:	701a      	strb	r2, [r3, #0]
- 80025fa:	e002      	b.n	8002602 <buttonFunctionDebounce+0xc2>
+ 8002634:	4b19      	ldr	r3, [pc, #100]	@ (800269c <buttonFunctionDebounce+0x11c>)
+ 8002636:	2200      	movs	r2, #0
+ 8002638:	701a      	strb	r2, [r3, #0]
+ 800263a:	e002      	b.n	8002642 <buttonFunctionDebounce+0xc2>
             		}
             		else
             		{
             			glbModeSelection = PomodoroFunctions_PomodoroMode;
- 80025fc:	4b15      	ldr	r3, [pc, #84]	@ (8002654 <buttonFunctionDebounce+0x114>)
- 80025fe:	2200      	movs	r2, #0
- 8002600:	701a      	strb	r2, [r3, #0]
+ 800263c:	4b15      	ldr	r3, [pc, #84]	@ (8002694 <buttonFunctionDebounce+0x114>)
+ 800263e:	2200      	movs	r2, #0
+ 8002640:	701a      	strb	r2, [r3, #0]
             		}
 
             		glbCurrentModeTime = LONGBREAK_TIME;
- 8002602:	4915      	ldr	r1, [pc, #84]	@ (8002658 <buttonFunctionDebounce+0x118>)
- 8002604:	f44f 7261 	mov.w	r2, #900	@ 0x384
- 8002608:	f04f 0300 	mov.w	r3, #0
- 800260c:	e9c1 2300 	strd	r2, r3, [r1]
- 8002610:	e00d      	b.n	800262e <buttonFunctionDebounce+0xee>
+ 8002642:	4915      	ldr	r1, [pc, #84]	@ (8002698 <buttonFunctionDebounce+0x118>)
+ 8002644:	f44f 7261 	mov.w	r2, #900	@ 0x384
+ 8002648:	f04f 0300 	mov.w	r3, #0
+ 800264c:	e9c1 2300 	strd	r2, r3, [r1]
+ 8002650:	e00d      	b.n	800266e <buttonFunctionDebounce+0xee>
 
             	}
             	else if(glbModeSelection == PomodoroFunctions_LongBreak)
- 8002612:	4b10      	ldr	r3, [pc, #64]	@ (8002654 <buttonFunctionDebounce+0x114>)
- 8002614:	781b      	ldrb	r3, [r3, #0]
- 8002616:	2b02      	cmp	r3, #2
- 8002618:	d109      	bne.n	800262e <buttonFunctionDebounce+0xee>
+ 8002652:	4b10      	ldr	r3, [pc, #64]	@ (8002694 <buttonFunctionDebounce+0x114>)
+ 8002654:	781b      	ldrb	r3, [r3, #0]
+ 8002656:	2b02      	cmp	r3, #2
+ 8002658:	d109      	bne.n	800266e <buttonFunctionDebounce+0xee>
             	{
             		glbModeSelection = PomodoroFunctions_PomodoroMode;
- 800261a:	4b0e      	ldr	r3, [pc, #56]	@ (8002654 <buttonFunctionDebounce+0x114>)
- 800261c:	2200      	movs	r2, #0
- 800261e:	701a      	strb	r2, [r3, #0]
+ 800265a:	4b0e      	ldr	r3, [pc, #56]	@ (8002694 <buttonFunctionDebounce+0x114>)
+ 800265c:	2200      	movs	r2, #0
+ 800265e:	701a      	strb	r2, [r3, #0]
             		glbCurrentModeTime = POMODOROMODE_TIME;
- 8002620:	490d      	ldr	r1, [pc, #52]	@ (8002658 <buttonFunctionDebounce+0x118>)
- 8002622:	f240 52dc 	movw	r2, #1500	@ 0x5dc
- 8002626:	f04f 0300 	mov.w	r3, #0
- 800262a:	e9c1 2300 	strd	r2, r3, [r1]
+ 8002660:	490d      	ldr	r1, [pc, #52]	@ (8002698 <buttonFunctionDebounce+0x118>)
+ 8002662:	f240 52dc 	movw	r2, #1500	@ 0x5dc
+ 8002666:	f04f 0300 	mov.w	r3, #0
+ 800266a:	e9c1 2300 	strd	r2, r3, [r1]
             	}
-
             }
         }
     }
-    glbLastButtonState = tempButtonReading;
- 800262e:	4a04      	ldr	r2, [pc, #16]	@ (8002640 <buttonFunctionDebounce+0x100>)
- 8002630:	79fb      	ldrb	r3, [r7, #7]
- 8002632:	7013      	strb	r3, [r2, #0]
+    glbLastButtonState = tempButtonReading; /** Store current reading for comparison in next cycle **/
+ 800266e:	4a04      	ldr	r2, [pc, #16]	@ (8002680 <buttonFunctionDebounce+0x100>)
+ 8002670:	79fb      	ldrb	r3, [r7, #7]
+ 8002672:	7013      	strb	r3, [r2, #0]
 }
- 8002634:	bf00      	nop
- 8002636:	3708      	adds	r7, #8
- 8002638:	46bd      	mov	sp, r7
- 800263a:	bdb0      	pop	{r4, r5, r7, pc}
- 800263c:	40020000 	.word	0x40020000
- 8002640:	200000b1 	.word	0x200000b1
- 8002644:	20000088 	.word	0x20000088
- 8002648:	200000b8 	.word	0x200000b8
- 800264c:	200000c0 	.word	0x200000c0
- 8002650:	20000080 	.word	0x20000080
- 8002654:	2000009e 	.word	0x2000009e
- 8002658:	20000010 	.word	0x20000010
- 800265c:	2000009f 	.word	0x2000009f
+ 8002674:	bf00      	nop
+ 8002676:	3708      	adds	r7, #8
+ 8002678:	46bd      	mov	sp, r7
+ 800267a:	bdb0      	pop	{r4, r5, r7, pc}
+ 800267c:	40020000 	.word	0x40020000
+ 8002680:	200000b1 	.word	0x200000b1
+ 8002684:	20000088 	.word	0x20000088
+ 8002688:	200000b8 	.word	0x200000b8
+ 800268c:	200000c0 	.word	0x200000c0
+ 8002690:	20000080 	.word	0x20000080
+ 8002694:	2000009e 	.word	0x2000009e
+ 8002698:	20000010 	.word	0x20000010
+ 800269c:	2000009f 	.word	0x2000009f
 
-08002660 <updateDisplay>:
-
+080026a0 <updateDisplay>:
+ * @warning Be sure that the display is initialized before calling this.
+ *
+ * @see TM1637_Convert_To_Digits(), TM1637_Update_Data_Dots()
+ *****************************************************************************/
 void updateDisplay(void)
 {
- 8002660:	b580      	push	{r7, lr}
- 8002662:	af00      	add	r7, sp, #0
+ 80026a0:	b580      	push	{r7, lr}
+ 80026a2:	af00      	add	r7, sp, #0
 	if(glbLastSecondsCount != glbSecondCounter)
- 8002664:	4b43      	ldr	r3, [pc, #268]	@ (8002774 <updateDisplay+0x114>)
- 8002666:	e9d3 0100 	ldrd	r0, r1, [r3]
- 800266a:	4b43      	ldr	r3, [pc, #268]	@ (8002778 <updateDisplay+0x118>)
- 800266c:	e9d3 2300 	ldrd	r2, r3, [r3]
- 8002670:	4299      	cmp	r1, r3
- 8002672:	bf08      	it	eq
- 8002674:	4290      	cmpeq	r0, r2
- 8002676:	d07b      	beq.n	8002770 <updateDisplay+0x110>
+ 80026a4:	4b43      	ldr	r3, [pc, #268]	@ (80027b4 <updateDisplay+0x114>)
+ 80026a6:	e9d3 0100 	ldrd	r0, r1, [r3]
+ 80026aa:	4b43      	ldr	r3, [pc, #268]	@ (80027b8 <updateDisplay+0x118>)
+ 80026ac:	e9d3 2300 	ldrd	r2, r3, [r3]
+ 80026b0:	4299      	cmp	r1, r3
+ 80026b2:	bf08      	it	eq
+ 80026b4:	4290      	cmpeq	r0, r2
+ 80026b6:	d07b      	beq.n	80027b0 <updateDisplay+0x110>
 	{
+		/** Time has changed, so update the display **/
 		if(glbSecondCounter == glbCurrentModeTime)
- 8002678:	4b3f      	ldr	r3, [pc, #252]	@ (8002778 <updateDisplay+0x118>)
- 800267a:	e9d3 0100 	ldrd	r0, r1, [r3]
- 800267e:	4b3f      	ldr	r3, [pc, #252]	@ (800277c <updateDisplay+0x11c>)
- 8002680:	e9d3 2300 	ldrd	r2, r3, [r3]
- 8002684:	4299      	cmp	r1, r3
- 8002686:	bf08      	it	eq
- 8002688:	4290      	cmpeq	r0, r2
- 800268a:	d149      	bne.n	8002720 <updateDisplay+0xc0>
+ 80026b8:	4b3f      	ldr	r3, [pc, #252]	@ (80027b8 <updateDisplay+0x118>)
+ 80026ba:	e9d3 0100 	ldrd	r0, r1, [r3]
+ 80026be:	4b3f      	ldr	r3, [pc, #252]	@ (80027bc <updateDisplay+0x11c>)
+ 80026c0:	e9d3 2300 	ldrd	r2, r3, [r3]
+ 80026c4:	4299      	cmp	r1, r3
+ 80026c6:	bf08      	it	eq
+ 80026c8:	4290      	cmpeq	r0, r2
+ 80026ca:	d149      	bne.n	8002760 <updateDisplay+0xc0>
 		{
         	glbSecondCounter = 0;
- 800268c:	493a      	ldr	r1, [pc, #232]	@ (8002778 <updateDisplay+0x118>)
- 800268e:	f04f 0200 	mov.w	r2, #0
- 8002692:	f04f 0300 	mov.w	r3, #0
- 8002696:	e9c1 2300 	strd	r2, r3, [r1]
+ 80026cc:	493a      	ldr	r1, [pc, #232]	@ (80027b8 <updateDisplay+0x118>)
+ 80026ce:	f04f 0200 	mov.w	r2, #0
+ 80026d2:	f04f 0300 	mov.w	r3, #0
+ 80026d6:	e9c1 2300 	strd	r2, r3, [r1]
         	if(glbModeSelection == PomodoroFunctions_PomodoroMode)
- 800269a:	4b39      	ldr	r3, [pc, #228]	@ (8002780 <updateDisplay+0x120>)
- 800269c:	781b      	ldrb	r3, [r3, #0]
- 800269e:	2b00      	cmp	r3, #0
- 80026a0:	d110      	bne.n	80026c4 <updateDisplay+0x64>
+ 80026da:	4b39      	ldr	r3, [pc, #228]	@ (80027c0 <updateDisplay+0x120>)
+ 80026dc:	781b      	ldrb	r3, [r3, #0]
+ 80026de:	2b00      	cmp	r3, #0
+ 80026e0:	d110      	bne.n	8002704 <updateDisplay+0x64>
         	{
         		glbModeSelection = PomodoroFunctions_ShortBreak;
- 80026a2:	4b37      	ldr	r3, [pc, #220]	@ (8002780 <updateDisplay+0x120>)
- 80026a4:	2201      	movs	r2, #1
- 80026a6:	701a      	strb	r2, [r3, #0]
+ 80026e2:	4b37      	ldr	r3, [pc, #220]	@ (80027c0 <updateDisplay+0x120>)
+ 80026e4:	2201      	movs	r2, #1
+ 80026e6:	701a      	strb	r2, [r3, #0]
         		glbCurrentModeTime = SHORTBREAK_TIME;
- 80026a8:	4934      	ldr	r1, [pc, #208]	@ (800277c <updateDisplay+0x11c>)
- 80026aa:	f44f 7296 	mov.w	r2, #300	@ 0x12c
- 80026ae:	f04f 0300 	mov.w	r3, #0
- 80026b2:	e9c1 2300 	strd	r2, r3, [r1]
+ 80026e8:	4934      	ldr	r1, [pc, #208]	@ (80027bc <updateDisplay+0x11c>)
+ 80026ea:	f44f 7296 	mov.w	r2, #300	@ 0x12c
+ 80026ee:	f04f 0300 	mov.w	r3, #0
+ 80026f2:	e9c1 2300 	strd	r2, r3, [r1]
         		glbPomodoroCycles++;
- 80026b6:	4b33      	ldr	r3, [pc, #204]	@ (8002784 <updateDisplay+0x124>)
- 80026b8:	781b      	ldrb	r3, [r3, #0]
- 80026ba:	3301      	adds	r3, #1
- 80026bc:	b2da      	uxtb	r2, r3
- 80026be:	4b31      	ldr	r3, [pc, #196]	@ (8002784 <updateDisplay+0x124>)
- 80026c0:	701a      	strb	r2, [r3, #0]
- 80026c2:	e02d      	b.n	8002720 <updateDisplay+0xc0>
+ 80026f6:	4b33      	ldr	r3, [pc, #204]	@ (80027c4 <updateDisplay+0x124>)
+ 80026f8:	781b      	ldrb	r3, [r3, #0]
+ 80026fa:	3301      	adds	r3, #1
+ 80026fc:	b2da      	uxtb	r2, r3
+ 80026fe:	4b31      	ldr	r3, [pc, #196]	@ (80027c4 <updateDisplay+0x124>)
+ 8002700:	701a      	strb	r2, [r3, #0]
+ 8002702:	e02d      	b.n	8002760 <updateDisplay+0xc0>
         	}
         	else if(glbModeSelection == PomodoroFunctions_ShortBreak)
- 80026c4:	4b2e      	ldr	r3, [pc, #184]	@ (8002780 <updateDisplay+0x120>)
- 80026c6:	781b      	ldrb	r3, [r3, #0]
- 80026c8:	2b01      	cmp	r3, #1
- 80026ca:	d11b      	bne.n	8002704 <updateDisplay+0xa4>
+ 8002704:	4b2e      	ldr	r3, [pc, #184]	@ (80027c0 <updateDisplay+0x120>)
+ 8002706:	781b      	ldrb	r3, [r3, #0]
+ 8002708:	2b01      	cmp	r3, #1
+ 800270a:	d11b      	bne.n	8002744 <updateDisplay+0xa4>
         	{
         		glbPomodoroCycles++;
- 80026cc:	4b2d      	ldr	r3, [pc, #180]	@ (8002784 <updateDisplay+0x124>)
- 80026ce:	781b      	ldrb	r3, [r3, #0]
- 80026d0:	3301      	adds	r3, #1
- 80026d2:	b2da      	uxtb	r2, r3
- 80026d4:	4b2b      	ldr	r3, [pc, #172]	@ (8002784 <updateDisplay+0x124>)
- 80026d6:	701a      	strb	r2, [r3, #0]
+ 800270c:	4b2d      	ldr	r3, [pc, #180]	@ (80027c4 <updateDisplay+0x124>)
+ 800270e:	781b      	ldrb	r3, [r3, #0]
+ 8002710:	3301      	adds	r3, #1
+ 8002712:	b2da      	uxtb	r2, r3
+ 8002714:	4b2b      	ldr	r3, [pc, #172]	@ (80027c4 <updateDisplay+0x124>)
+ 8002716:	701a      	strb	r2, [r3, #0]
         		if(glbPomodoroCycles == 8)
- 80026d8:	4b2a      	ldr	r3, [pc, #168]	@ (8002784 <updateDisplay+0x124>)
- 80026da:	781b      	ldrb	r3, [r3, #0]
- 80026dc:	2b08      	cmp	r3, #8
- 80026de:	d106      	bne.n	80026ee <updateDisplay+0x8e>
+ 8002718:	4b2a      	ldr	r3, [pc, #168]	@ (80027c4 <updateDisplay+0x124>)
+ 800271a:	781b      	ldrb	r3, [r3, #0]
+ 800271c:	2b08      	cmp	r3, #8
+ 800271e:	d106      	bne.n	800272e <updateDisplay+0x8e>
         		{
         			glbModeSelection = PomodoroFunctions_LongBreak;
- 80026e0:	4b27      	ldr	r3, [pc, #156]	@ (8002780 <updateDisplay+0x120>)
- 80026e2:	2202      	movs	r2, #2
- 80026e4:	701a      	strb	r2, [r3, #0]
+ 8002720:	4b27      	ldr	r3, [pc, #156]	@ (80027c0 <updateDisplay+0x120>)
+ 8002722:	2202      	movs	r2, #2
+ 8002724:	701a      	strb	r2, [r3, #0]
         			glbPomodoroCycles = 0;
- 80026e6:	4b27      	ldr	r3, [pc, #156]	@ (8002784 <updateDisplay+0x124>)
- 80026e8:	2200      	movs	r2, #0
- 80026ea:	701a      	strb	r2, [r3, #0]
- 80026ec:	e002      	b.n	80026f4 <updateDisplay+0x94>
+ 8002726:	4b27      	ldr	r3, [pc, #156]	@ (80027c4 <updateDisplay+0x124>)
+ 8002728:	2200      	movs	r2, #0
+ 800272a:	701a      	strb	r2, [r3, #0]
+ 800272c:	e002      	b.n	8002734 <updateDisplay+0x94>
         		}
         		else
         		{
         			glbModeSelection = PomodoroFunctions_PomodoroMode;
- 80026ee:	4b24      	ldr	r3, [pc, #144]	@ (8002780 <updateDisplay+0x120>)
- 80026f0:	2200      	movs	r2, #0
- 80026f2:	701a      	strb	r2, [r3, #0]
+ 800272e:	4b24      	ldr	r3, [pc, #144]	@ (80027c0 <updateDisplay+0x120>)
+ 8002730:	2200      	movs	r2, #0
+ 8002732:	701a      	strb	r2, [r3, #0]
         		}
 
         		glbCurrentModeTime = LONGBREAK_TIME;
- 80026f4:	4921      	ldr	r1, [pc, #132]	@ (800277c <updateDisplay+0x11c>)
- 80026f6:	f44f 7261 	mov.w	r2, #900	@ 0x384
- 80026fa:	f04f 0300 	mov.w	r3, #0
- 80026fe:	e9c1 2300 	strd	r2, r3, [r1]
- 8002702:	e00d      	b.n	8002720 <updateDisplay+0xc0>
+ 8002734:	4921      	ldr	r1, [pc, #132]	@ (80027bc <updateDisplay+0x11c>)
+ 8002736:	f44f 7261 	mov.w	r2, #900	@ 0x384
+ 800273a:	f04f 0300 	mov.w	r3, #0
+ 800273e:	e9c1 2300 	strd	r2, r3, [r1]
+ 8002742:	e00d      	b.n	8002760 <updateDisplay+0xc0>
 
         	}
         	else if(glbModeSelection == PomodoroFunctions_LongBreak)
- 8002704:	4b1e      	ldr	r3, [pc, #120]	@ (8002780 <updateDisplay+0x120>)
- 8002706:	781b      	ldrb	r3, [r3, #0]
- 8002708:	2b02      	cmp	r3, #2
- 800270a:	d109      	bne.n	8002720 <updateDisplay+0xc0>
+ 8002744:	4b1e      	ldr	r3, [pc, #120]	@ (80027c0 <updateDisplay+0x120>)
+ 8002746:	781b      	ldrb	r3, [r3, #0]
+ 8002748:	2b02      	cmp	r3, #2
+ 800274a:	d109      	bne.n	8002760 <updateDisplay+0xc0>
         	{
         		glbModeSelection = PomodoroFunctions_PomodoroMode;
- 800270c:	4b1c      	ldr	r3, [pc, #112]	@ (8002780 <updateDisplay+0x120>)
- 800270e:	2200      	movs	r2, #0
- 8002710:	701a      	strb	r2, [r3, #0]
+ 800274c:	4b1c      	ldr	r3, [pc, #112]	@ (80027c0 <updateDisplay+0x120>)
+ 800274e:	2200      	movs	r2, #0
+ 8002750:	701a      	strb	r2, [r3, #0]
         		glbCurrentModeTime = POMODOROMODE_TIME;
- 8002712:	491a      	ldr	r1, [pc, #104]	@ (800277c <updateDisplay+0x11c>)
- 8002714:	f240 52dc 	movw	r2, #1500	@ 0x5dc
- 8002718:	f04f 0300 	mov.w	r3, #0
- 800271c:	e9c1 2300 	strd	r2, r3, [r1]
-
+ 8002752:	491a      	ldr	r1, [pc, #104]	@ (80027bc <updateDisplay+0x11c>)
+ 8002754:	f240 52dc 	movw	r2, #1500	@ 0x5dc
+ 8002758:	f04f 0300 	mov.w	r3, #0
+ 800275c:	e9c1 2300 	strd	r2, r3, [r1]
         	}
-
 		}
 
-			glbLastSecondsCount = glbSecondCounter;
- 8002720:	4b15      	ldr	r3, [pc, #84]	@ (8002778 <updateDisplay+0x118>)
- 8002722:	e9d3 2300 	ldrd	r2, r3, [r3]
- 8002726:	4913      	ldr	r1, [pc, #76]	@ (8002774 <updateDisplay+0x114>)
- 8002728:	e9c1 2300 	strd	r2, r3, [r1]
-			TM1637_Convert_To_Digits(glbSecondCounter,&displayData[0]);
- 800272c:	4b12      	ldr	r3, [pc, #72]	@ (8002778 <updateDisplay+0x118>)
- 800272e:	e9d3 2300 	ldrd	r2, r3, [r3]
- 8002732:	4613      	mov	r3, r2
- 8002734:	4914      	ldr	r1, [pc, #80]	@ (8002788 <updateDisplay+0x128>)
- 8002736:	4618      	mov	r0, r3
- 8002738:	f7ff fdde 	bl	80022f8 <TM1637_Convert_To_Digits>
+		glbLastSecondsCount = glbSecondCounter; /** Update the stored count for future comparison **/
+ 8002760:	4b15      	ldr	r3, [pc, #84]	@ (80027b8 <updateDisplay+0x118>)
+ 8002762:	e9d3 2300 	ldrd	r2, r3, [r3]
+ 8002766:	4913      	ldr	r1, [pc, #76]	@ (80027b4 <updateDisplay+0x114>)
+ 8002768:	e9c1 2300 	strd	r2, r3, [r1]
+		TM1637_Convert_To_Digits(glbSecondCounter,&displayData[0]); /** Convert seconds to digit format **/
+ 800276c:	4b12      	ldr	r3, [pc, #72]	@ (80027b8 <updateDisplay+0x118>)
+ 800276e:	e9d3 2300 	ldrd	r2, r3, [r3]
+ 8002772:	4613      	mov	r3, r2
+ 8002774:	4914      	ldr	r1, [pc, #80]	@ (80027c8 <updateDisplay+0x128>)
+ 8002776:	4618      	mov	r0, r3
+ 8002778:	f7ff fdbe 	bl	80022f8 <TM1637_Convert_To_Digits>
 
-			if(glbLastDotState == true)
- 800273c:	4b13      	ldr	r3, [pc, #76]	@ (800278c <updateDisplay+0x12c>)
- 800273e:	781b      	ldrb	r3, [r3, #0]
- 8002740:	2b00      	cmp	r3, #0
- 8002742:	d007      	beq.n	8002754 <updateDisplay+0xf4>
-			{
-				glbLastDotState = false;
- 8002744:	4b11      	ldr	r3, [pc, #68]	@ (800278c <updateDisplay+0x12c>)
- 8002746:	2200      	movs	r2, #0
- 8002748:	701a      	strb	r2, [r3, #0]
-				TM1637_Update_Data_Dots(displayData,true);
- 800274a:	2101      	movs	r1, #1
- 800274c:	480e      	ldr	r0, [pc, #56]	@ (8002788 <updateDisplay+0x128>)
- 800274e:	f7ff fe21 	bl	8002394 <TM1637_Update_Data_Dots>
-				TM1637_Update_Data_Dots(displayData,false);
-			}
-
+		if(glbLastDotState == true)
+ 800277c:	4b13      	ldr	r3, [pc, #76]	@ (80027cc <updateDisplay+0x12c>)
+ 800277e:	781b      	ldrb	r3, [r3, #0]
+ 8002780:	2b00      	cmp	r3, #0
+ 8002782:	d007      	beq.n	8002794 <updateDisplay+0xf4>
+		{
+			glbLastDotState = false;
+ 8002784:	4b11      	ldr	r3, [pc, #68]	@ (80027cc <updateDisplay+0x12c>)
+ 8002786:	2200      	movs	r2, #0
+ 8002788:	701a      	strb	r2, [r3, #0]
+			TM1637_Update_Data_Dots(displayData,true); /** Toggle dot ON **/
+ 800278a:	2101      	movs	r1, #1
+ 800278c:	480e      	ldr	r0, [pc, #56]	@ (80027c8 <updateDisplay+0x128>)
+ 800278e:	f7ff fe01 	bl	8002394 <TM1637_Update_Data_Dots>
+		{
+			glbLastDotState = true;
+			TM1637_Update_Data_Dots(displayData,false); /** Toggle dot OFF **/
+		}
 	}
-
 }
- 8002752:	e00d      	b.n	8002770 <updateDisplay+0x110>
-			else if(glbLastDotState == false)
- 8002754:	4b0d      	ldr	r3, [pc, #52]	@ (800278c <updateDisplay+0x12c>)
- 8002756:	781b      	ldrb	r3, [r3, #0]
- 8002758:	f083 0301 	eor.w	r3, r3, #1
- 800275c:	b2db      	uxtb	r3, r3
- 800275e:	2b00      	cmp	r3, #0
- 8002760:	d006      	beq.n	8002770 <updateDisplay+0x110>
-				glbLastDotState = true;
- 8002762:	4b0a      	ldr	r3, [pc, #40]	@ (800278c <updateDisplay+0x12c>)
- 8002764:	2201      	movs	r2, #1
- 8002766:	701a      	strb	r2, [r3, #0]
-				TM1637_Update_Data_Dots(displayData,false);
- 8002768:	2100      	movs	r1, #0
- 800276a:	4807      	ldr	r0, [pc, #28]	@ (8002788 <updateDisplay+0x128>)
- 800276c:	f7ff fe12 	bl	8002394 <TM1637_Update_Data_Dots>
+ 8002792:	e00d      	b.n	80027b0 <updateDisplay+0x110>
+		else if(glbLastDotState == false)
+ 8002794:	4b0d      	ldr	r3, [pc, #52]	@ (80027cc <updateDisplay+0x12c>)
+ 8002796:	781b      	ldrb	r3, [r3, #0]
+ 8002798:	f083 0301 	eor.w	r3, r3, #1
+ 800279c:	b2db      	uxtb	r3, r3
+ 800279e:	2b00      	cmp	r3, #0
+ 80027a0:	d006      	beq.n	80027b0 <updateDisplay+0x110>
+			glbLastDotState = true;
+ 80027a2:	4b0a      	ldr	r3, [pc, #40]	@ (80027cc <updateDisplay+0x12c>)
+ 80027a4:	2201      	movs	r2, #1
+ 80027a6:	701a      	strb	r2, [r3, #0]
+			TM1637_Update_Data_Dots(displayData,false); /** Toggle dot OFF **/
+ 80027a8:	2100      	movs	r1, #0
+ 80027aa:	4807      	ldr	r0, [pc, #28]	@ (80027c8 <updateDisplay+0x128>)
+ 80027ac:	f7ff fdf2 	bl	8002394 <TM1637_Update_Data_Dots>
 }
- 8002770:	bf00      	nop
- 8002772:	bd80      	pop	{r7, pc}
- 8002774:	20000090 	.word	0x20000090
- 8002778:	20000080 	.word	0x20000080
- 800277c:	20000010 	.word	0x20000010
- 8002780:	2000009e 	.word	0x2000009e
- 8002784:	2000009f 	.word	0x2000009f
- 8002788:	20000098 	.word	0x20000098
- 800278c:	2000009c 	.word	0x2000009c
+ 80027b0:	bf00      	nop
+ 80027b2:	bd80      	pop	{r7, pc}
+ 80027b4:	20000090 	.word	0x20000090
+ 80027b8:	20000080 	.word	0x20000080
+ 80027bc:	20000010 	.word	0x20000010
+ 80027c0:	2000009e 	.word	0x2000009e
+ 80027c4:	2000009f 	.word	0x2000009f
+ 80027c8:	20000098 	.word	0x20000098
+ 80027cc:	2000009c 	.word	0x2000009c
 
-08002790 <userMain>:
-/*****************************************************************************/
-/* User Main Function                                                        */
-/*****************************************************************************/
+080027d0 <userMain>:
+ *          initialization is done before calling it.
+ *
+ * @see buttonControlDebounce(), buttonFunctionDebounce(), updateDisplay()
+ *****************************************************************************/
 void userMain(void)
 {
- 8002790:	b580      	push	{r7, lr}
- 8002792:	af00      	add	r7, sp, #0
+ 80027d0:	b580      	push	{r7, lr}
+ 80027d2:	af00      	add	r7, sp, #0
+	/* Start counting seconds*/
+	glbSecondCounter = 0;
+ 80027d4:	4911      	ldr	r1, [pc, #68]	@ (800281c <userMain+0x4c>)
+ 80027d6:	f04f 0200 	mov.w	r2, #0
+ 80027da:	f04f 0300 	mov.w	r3, #0
+ 80027de:	e9c1 2300 	strd	r2, r3, [r1]
+
+	/*Reset Mode counter*/
+	glbModeSelection = PomodoroFunctions_PomodoroMode;
+ 80027e2:	4b0f      	ldr	r3, [pc, #60]	@ (8002820 <userMain+0x50>)
+ 80027e4:	2200      	movs	r2, #0
+ 80027e6:	701a      	strb	r2, [r3, #0]
+
+    /* Reset Time selection*/
+    glbCurrentModeTime = POMODOROMODE_TIME;
+ 80027e8:	490e      	ldr	r1, [pc, #56]	@ (8002824 <userMain+0x54>)
+ 80027ea:	f240 52dc 	movw	r2, #1500	@ 0x5dc
+ 80027ee:	f04f 0300 	mov.w	r3, #0
+ 80027f2:	e9c1 2300 	strd	r2, r3, [r1]
+
+    /*Reset Pomodoro Cycles*/
+    glbPomodoroCycles = 0;
+ 80027f6:	4b0c      	ldr	r3, [pc, #48]	@ (8002828 <userMain+0x58>)
+ 80027f8:	2200      	movs	r2, #0
+ 80027fa:	701a      	strb	r2, [r3, #0]
+
+	glbTimerState = false;
+ 80027fc:	4b0b      	ldr	r3, [pc, #44]	@ (800282c <userMain+0x5c>)
+ 80027fe:	2200      	movs	r2, #0
+ 8002800:	701a      	strb	r2, [r3, #0]
+
 	/* Initialize data on display */
-    TM1637_Update_Data_Dots(displayData,true);
- 8002794:	2101      	movs	r1, #1
- 8002796:	4805      	ldr	r0, [pc, #20]	@ (80027ac <userMain+0x1c>)
- 8002798:	f7ff fdfc 	bl	8002394 <TM1637_Update_Data_Dots>
+    TM1637_Update_Data_Dots(displayData,false); /** Set initial colon/dot state on display **/
+ 8002802:	2100      	movs	r1, #0
+ 8002804:	480a      	ldr	r0, [pc, #40]	@ (8002830 <userMain+0x60>)
+ 8002806:	f7ff fdc5 	bl	8002394 <TM1637_Update_Data_Dots>
 
 	while(1)
 	{
-		buttonControlDebounce();
- 800279c:	f7ff fe5c 	bl	8002458 <buttonControlDebounce>
-		buttonFunctionDebounce();
- 80027a0:	f7ff fece 	bl	8002540 <buttonFunctionDebounce>
-		updateDisplay();
- 80027a4:	f7ff ff5c 	bl	8002660 <updateDisplay>
-		buttonControlDebounce();
- 80027a8:	bf00      	nop
- 80027aa:	e7f7      	b.n	800279c <userMain+0xc>
- 80027ac:	20000098 	.word	0x20000098
-
-080027b0 <memset>:
- 80027b0:	4402      	add	r2, r0
- 80027b2:	4603      	mov	r3, r0
- 80027b4:	4293      	cmp	r3, r2
- 80027b6:	d100      	bne.n	80027ba <memset+0xa>
- 80027b8:	4770      	bx	lr
- 80027ba:	f803 1b01 	strb.w	r1, [r3], #1
- 80027be:	e7f9      	b.n	80027b4 <memset+0x4>
-
-080027c0 <__libc_init_array>:
- 80027c0:	b570      	push	{r4, r5, r6, lr}
- 80027c2:	4d0d      	ldr	r5, [pc, #52]	@ (80027f8 <__libc_init_array+0x38>)
- 80027c4:	4c0d      	ldr	r4, [pc, #52]	@ (80027fc <__libc_init_array+0x3c>)
- 80027c6:	1b64      	subs	r4, r4, r5
- 80027c8:	10a4      	asrs	r4, r4, #2
- 80027ca:	2600      	movs	r6, #0
- 80027cc:	42a6      	cmp	r6, r4
- 80027ce:	d109      	bne.n	80027e4 <__libc_init_array+0x24>
- 80027d0:	4d0b      	ldr	r5, [pc, #44]	@ (8002800 <__libc_init_array+0x40>)
- 80027d2:	4c0c      	ldr	r4, [pc, #48]	@ (8002804 <__libc_init_array+0x44>)
- 80027d4:	f000 f818 	bl	8002808 <_init>
- 80027d8:	1b64      	subs	r4, r4, r5
- 80027da:	10a4      	asrs	r4, r4, #2
- 80027dc:	2600      	movs	r6, #0
- 80027de:	42a6      	cmp	r6, r4
- 80027e0:	d105      	bne.n	80027ee <__libc_init_array+0x2e>
- 80027e2:	bd70      	pop	{r4, r5, r6, pc}
- 80027e4:	f855 3b04 	ldr.w	r3, [r5], #4
- 80027e8:	4798      	blx	r3
- 80027ea:	3601      	adds	r6, #1
- 80027ec:	e7ee      	b.n	80027cc <__libc_init_array+0xc>
- 80027ee:	f855 3b04 	ldr.w	r3, [r5], #4
- 80027f2:	4798      	blx	r3
- 80027f4:	3601      	adds	r6, #1
- 80027f6:	e7f2      	b.n	80027de <__libc_init_array+0x1e>
- 80027f8:	08002844 	.word	0x08002844
- 80027fc:	08002844 	.word	0x08002844
- 8002800:	08002844 	.word	0x08002844
- 8002804:	08002848 	.word	0x08002848
-
-08002808 <_init>:
- 8002808:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
- 800280a:	bf00      	nop
- 800280c:	bcf8      	pop	{r3, r4, r5, r6, r7}
- 800280e:	bc08      	pop	{r3}
- 8002810:	469e      	mov	lr, r3
- 8002812:	4770      	bx	lr
-
-08002814 <_fini>:
- 8002814:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+		buttonControlDebounce(); /** Handle control button with debounce **/
+ 800280a:	f7ff fe25 	bl	8002458 <buttonControlDebounce>
+		buttonFunctionDebounce(); /** Handle mode change button with debounce **/
+ 800280e:	f7ff feb7 	bl	8002580 <buttonFunctionDebounce>
+		updateDisplay(); /** Refresh display based on timer count **/
+ 8002812:	f7ff ff45 	bl	80026a0 <updateDisplay>
+		buttonControlDebounce(); /** Handle control button with debounce **/
  8002816:	bf00      	nop
- 8002818:	bcf8      	pop	{r3, r4, r5, r6, r7}
- 800281a:	bc08      	pop	{r3}
- 800281c:	469e      	mov	lr, r3
- 800281e:	4770      	bx	lr
+ 8002818:	e7f7      	b.n	800280a <userMain+0x3a>
+ 800281a:	bf00      	nop
+ 800281c:	20000080 	.word	0x20000080
+ 8002820:	2000009e 	.word	0x2000009e
+ 8002824:	20000010 	.word	0x20000010
+ 8002828:	2000009f 	.word	0x2000009f
+ 800282c:	2000009d 	.word	0x2000009d
+ 8002830:	20000098 	.word	0x20000098
+
+08002834 <memset>:
+ 8002834:	4402      	add	r2, r0
+ 8002836:	4603      	mov	r3, r0
+ 8002838:	4293      	cmp	r3, r2
+ 800283a:	d100      	bne.n	800283e <memset+0xa>
+ 800283c:	4770      	bx	lr
+ 800283e:	f803 1b01 	strb.w	r1, [r3], #1
+ 8002842:	e7f9      	b.n	8002838 <memset+0x4>
+
+08002844 <__libc_init_array>:
+ 8002844:	b570      	push	{r4, r5, r6, lr}
+ 8002846:	4d0d      	ldr	r5, [pc, #52]	@ (800287c <__libc_init_array+0x38>)
+ 8002848:	4c0d      	ldr	r4, [pc, #52]	@ (8002880 <__libc_init_array+0x3c>)
+ 800284a:	1b64      	subs	r4, r4, r5
+ 800284c:	10a4      	asrs	r4, r4, #2
+ 800284e:	2600      	movs	r6, #0
+ 8002850:	42a6      	cmp	r6, r4
+ 8002852:	d109      	bne.n	8002868 <__libc_init_array+0x24>
+ 8002854:	4d0b      	ldr	r5, [pc, #44]	@ (8002884 <__libc_init_array+0x40>)
+ 8002856:	4c0c      	ldr	r4, [pc, #48]	@ (8002888 <__libc_init_array+0x44>)
+ 8002858:	f000 f818 	bl	800288c <_init>
+ 800285c:	1b64      	subs	r4, r4, r5
+ 800285e:	10a4      	asrs	r4, r4, #2
+ 8002860:	2600      	movs	r6, #0
+ 8002862:	42a6      	cmp	r6, r4
+ 8002864:	d105      	bne.n	8002872 <__libc_init_array+0x2e>
+ 8002866:	bd70      	pop	{r4, r5, r6, pc}
+ 8002868:	f855 3b04 	ldr.w	r3, [r5], #4
+ 800286c:	4798      	blx	r3
+ 800286e:	3601      	adds	r6, #1
+ 8002870:	e7ee      	b.n	8002850 <__libc_init_array+0xc>
+ 8002872:	f855 3b04 	ldr.w	r3, [r5], #4
+ 8002876:	4798      	blx	r3
+ 8002878:	3601      	adds	r6, #1
+ 800287a:	e7f2      	b.n	8002862 <__libc_init_array+0x1e>
+ 800287c:	080028c8 	.word	0x080028c8
+ 8002880:	080028c8 	.word	0x080028c8
+ 8002884:	080028c8 	.word	0x080028c8
+ 8002888:	080028cc 	.word	0x080028cc
+
+0800288c <_init>:
+ 800288c:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+ 800288e:	bf00      	nop
+ 8002890:	bcf8      	pop	{r3, r4, r5, r6, r7}
+ 8002892:	bc08      	pop	{r3}
+ 8002894:	469e      	mov	lr, r3
+ 8002896:	4770      	bx	lr
+
+08002898 <_fini>:
+ 8002898:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+ 800289a:	bf00      	nop
+ 800289c:	bcf8      	pop	{r3, r4, r5, r6, r7}
+ 800289e:	bc08      	pop	{r3}
+ 80028a0:	469e      	mov	lr, r3
+ 80028a2:	4770      	bx	lr

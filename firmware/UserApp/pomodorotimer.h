@@ -42,30 +42,67 @@ extern "C"
 /*****************************************************************************/
 #include "main.h"
 #include "TM1637.h"
+
 /*****************************************************************************/
 /* Private Defines                                                           */
 /*****************************************************************************/
+
+/**
+ * @brief Pomodoro session duration in seconds.
+ *
+ * @details Represents 25 minutes (25 * 60 = 1500 seconds).
+ */
 #define POMODOROMODE_TIME            (1500) /*25 minutes in seconds*/
-#define SHORTBREAK_TIME              (300) /*5 minutes in seconds*/
-#define LONGBREAK_TIME               (900) /*15 minutes in seconds*/
+
+/**
+ * @brief Short break duration in seconds.
+ *
+ * @details Represents 5 minutes (5 * 60 = 300 seconds).
+ */
+#define SHORTBREAK_TIME              (300)  /*5 minutes in seconds*/
+
+/**
+ * @brief Long break duration in seconds.
+ *
+ * @details Represents 15 minutes (15 * 60 = 900 seconds).
+ */
+#define LONGBREAK_TIME               (900)  /*15 minutes in seconds*/
+
 /*****************************************************************************/
 /* Private Enums                                                             */
 /*****************************************************************************/
+
+/**
+ * @brief Enum for Pomodoro timer modes.
+ *
+ * @details Used to switch between different Pomodoro states during operation.
+ */
 typedef enum
 {
-	PomodoroFunctions_PomodoroMode,
-	PomodoroFunctions_ShortBreak,
-	PomodoroFunctions_LongBreak,
+	PomodoroFunctions_PomodoroMode,   /**< Pomodoro work session */
+	PomodoroFunctions_ShortBreak,     /**< Short break session */
+	PomodoroFunctions_LongBreak,      /**< Long break session */
 }PomodoroFunctions_e;
+
 /*****************************************************************************/
 /* Private Variables                                                         */
 /*****************************************************************************/
-
+// (Add comments here when variables are defined in this section)
 
 /*****************************************************************************/
 /* User Functions                                                            */
 /*****************************************************************************/
+
+/**
+ * @brief Entry function for the user Pomodoro application.
+ *
+ * @details Initializes and continuously manages button input, time tracking,
+ *          display updates, and mode transitions for the Pomodoro clock.
+ *
+ * @note Should be called once from `main()` or scheduler to start application.
+ */
 void userMain(void);
+
 
 #ifdef __cplusplus
 }

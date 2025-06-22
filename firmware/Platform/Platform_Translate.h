@@ -43,9 +43,36 @@
 
 #include "main.h"
 
+/**
+ * @brief Sets the CLK (Clock) line high for TM1637 communication.
+ *
+ * @details This macro sets GPIO pin PB12 to high state to indicate a rising edge
+ *          or high logic level on the clock line as required by the TM1637 protocol.
+ */
 #define CLK_HIGH() HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET)
+
+/**
+ * @brief Sets the CLK (Clock) line low for TM1637 communication.
+ *
+ * @details This macro sets GPIO pin PB12 to low state to indicate a falling edge
+ *          or low logic level on the clock line.
+ */
 #define CLK_LOW()  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
+
+/**
+ * @brief Sets the DATA line high for TM1637 communication.
+ *
+ * @details This macro sets GPIO pin PB13 to high state, representing a logic high
+ *          signal on the data line for bit transmission.
+ */
 #define DATA_HIGH() HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, GPIO_PIN_SET)
+
+/**
+ * @brief Sets the DATA line low for TM1637 communication.
+ *
+ * @details This macro sets GPIO pin PB13 to low state, representing a logic low
+ *          signal on the data line for bit transmission.
+ */
 #define DATA_LOW()  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, GPIO_PIN_RESET);
 
 #endif /* PLATFORM_PLATFORM_TRANSLATE_H_ */
