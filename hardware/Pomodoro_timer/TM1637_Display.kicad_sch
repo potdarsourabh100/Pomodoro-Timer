@@ -1,0 +1,14 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "bc06262a-4b28-4ac5-a027-5ce6c54e3172")
+	(paper "A4")
+	(title_block
+		(title "TM1637_Display")
+		(date "2025-06-22")
+		(rev "REV. A")
+		(company "EmbSysTech.in")
+	)
+	(lib_symbols)
+)
