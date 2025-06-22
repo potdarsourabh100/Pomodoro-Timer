@@ -1,0 +1,11 @@
+../Platform/TM1637.c:51:6:Delay_us	3
+../Platform/TM1637.c:60:6:TM1637_Start	1
+../Platform/TM1637.c:69:6:TM1637_Stop	1
+../Platform/TM1637.c:80:6:TM1637_WaitForAck	1
+../Platform/TM1637.c:90:6:TM1637_WriteByte	3
+../Platform/TM1637.c:111:6:TM1637_WriteDataCommand	1
+../Platform/TM1637.c:119:6:TM1637_WriteData	2
+../Platform/TM1637.c:132:6:TM1637_WriteDisplayCommand	1
+../Platform/TM1637.c:140:6:TM1637_Write	2
+../Platform/TM1637.c:164:6:TM1637_Convert_To_Digits	1
+../Platform/TM1637.c:175:6:TM1637_Update_Data_Dots	4

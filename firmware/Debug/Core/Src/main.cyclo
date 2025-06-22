@@ -1,0 +1,7 @@
+D:/Sourabh_Workspace/My_Personal_Project_Workspaces/Pomodoro-Timer/firmware/Common/StdUtil.h:147:9:stdUtil_map	1
+D:/Sourabh_Workspace/My_Personal_Project_Workspaces/Pomodoro-Timer/firmware/Common/StdUtil.h:162:28:stdUtil_putChar	1
+../Core/Src/main.c:78:5:main	12
+../Core/Src/main.c:194:6:SystemClock_Config	3
+../Core/Src/main.c:241:13:MX_TIM3_Init	4
+../Core/Src/main.c:286:13:MX_GPIO_Init	1
+../Core/Src/main.c:337:6:Error_Handler	1
