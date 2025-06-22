@@ -31,7 +31,9 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "StdUtil.h"
+#include "Version.h"
+#include "../../UserApp/pomodorotimer.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/

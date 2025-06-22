@@ -21,9 +21,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "StdUtil.h"
-#include "Version.h"
-#include "TM1637.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -33,7 +31,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define DEBOUNCEDELAY        20      /* The De-bounce Time; increase it if the output still flicker */
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -45,17 +43,7 @@
 TIM_HandleTypeDef htim3;
 
 /* USER CODE BEGIN PV */
-volatile uintmax_t glbSecondCounter = 0;
 
-volatile uintmax_t glbSysTicks = 0;
-
-uintmax_t glbLastDebounceTime = 0;  /* The Last Time The Output Pin Was Toggled */
-uint8_t glbButtonState;            /* The Current Reading From The Input Pin */
-uint8_t glbLastButtonState = 0;    /* The previous reading from The Input Pin */
-uintmax_t glbLastSecondsCount = 0;
-
-bool glbLastDotState = false;
-bool glbTimerState = false;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -79,9 +67,7 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-	uint8_t tempButtonReading = 0;
 
-	uint8_t displayData[] = {0,0,0,0};
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -107,10 +93,10 @@ int main(void)
 
   HAL_Delay(1000);
 
+  /* Set LED for warning */
   HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);
 
-  TM1637_Update_Data_Dots(displayData,true);
-
+  userMain();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -120,69 +106,9 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	    tempButtonReading = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0); /* read the state of the switch into a local variable */
-	    if(tempButtonReading != glbLastButtonState) /* If the switch changed, due to noise or pressing */
-	    {
-	        glbLastDebounceTime = glbSysTicks; /* reset the debouncing timer */
-	    }
-	    if((glbSysTicks - glbLastDebounceTime) > DEBOUNCEDELAY)
-	    {
-	        if(tempButtonReading != glbButtonState)
-	        {
-	            glbButtonState = tempButtonReading;
-	            if(glbButtonState == GPIO_PIN_RESET)
-	            {
-	            	if(glbTimerState == false)
-	            	{
-	            		/* Start counting seconds*/
-	                    glbSecondCounter = 0;
-
-	            		glbTimerState = true;
-	            		/* Start The timer */
-	            	    if (HAL_TIM_Base_Start_IT(&htim3) != HAL_OK)
-	            		{
-	            		  /* Starting Error */
-	            		  Error_Handler();
-	            		}
-	            	}
-	            	else if(glbTimerState == true)
-					{
-	            		/* Start counting seconds*/
-                        glbSecondCounter = 0;
-
-	            		glbTimerState = false;
-	                	/* Stop The timer */
-	                   if (HAL_TIM_Base_Stop_IT(&htim3) != HAL_OK)
-	                   {
-	                	   /* Stopping Error */
-	                	   Error_Handler();
-	                   }
-
-					}
-	            }
-	        }
-	    }
-	    glbLastButtonState = tempButtonReading;
-
-	    if(glbLastSecondsCount != glbSecondCounter)
-	    {
-	    	glbLastSecondsCount = glbSecondCounter;
-	    	TM1637_Convert_To_Digits(glbSecondCounter,&displayData[0]);
-
-	    	if(glbLastDotState == true)
-	    	{
-	    		glbLastDotState = false;
-	    		TM1637_Update_Data_Dots(displayData,true);
-	    	}
-	    	else if(glbLastDotState == false)
-	    	{
-	    		glbLastDotState = true;
-	    	    TM1637_Update_Data_Dots(displayData,false);
-	    	}
-	    }
-
-
-
+	  /* The given LED reaches if application functions crashed*/
+	  HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+	  HAL_Delay(2000);
   }
   /* USER CODE END 3 */
 }

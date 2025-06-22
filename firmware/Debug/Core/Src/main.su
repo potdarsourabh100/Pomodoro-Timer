@@ -1,7 +1,6 @@
-D:/Sourabh_Workspace/My_Personal_Project_Workspaces/Pomodoro-Timer/firmware/Common/StdUtil.h:147:9:stdUtil_map	24	static
-D:/Sourabh_Workspace/My_Personal_Project_Workspaces/Pomodoro-Timer/firmware/Common/StdUtil.h:162:28:stdUtil_putChar	16	static
-../Core/Src/main.c:78:5:main	24	static
-../Core/Src/main.c:194:6:SystemClock_Config	88	static
-../Core/Src/main.c:241:13:MX_TIM3_Init	32	static
-../Core/Src/main.c:286:13:MX_GPIO_Init	40	static
-../Core/Src/main.c:337:6:Error_Handler	4	static,ignoring_inline_asm
+D:/Sourabh_Workspace/My_Personal_Project_Workspaces/Pomodoro-Timer/firmware/Common/StdUtil.h:163:28:stdUtil_putChar	16	static
+../Core/Src/main.c:66:5:main	8	static
+../Core/Src/main.c:120:6:SystemClock_Config	88	static
+../Core/Src/main.c:167:13:MX_TIM3_Init	32	static
+../Core/Src/main.c:212:13:MX_GPIO_Init	40	static
+../Core/Src/main.c:263:6:Error_Handler	4	static,ignoring_inline_asm

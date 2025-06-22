@@ -1,5 +1,5 @@
 /**
- * \file           TM1637.h
+ * \file           TM1637.c
  * \brief          TM1637 source file
  */
 
@@ -30,8 +30,13 @@
  * Version:         V1.0.0
  */
 
+/*****************************************************************************/
+/* Include Files                                                             */
+/*****************************************************************************/
 #include "TM1637.h"
-
+/*****************************************************************************/
+/* Private Variables                                                         */
+/*****************************************************************************/
 static const uint8_t tm1637digitpattern[] = {    0b00111111,    /* 0 */
 										   	   	 0b00000110,    /* 1 */
 												 0b01011011,    /* 2 */
@@ -48,7 +53,10 @@ static const uint8_t tm1637digitpattern[] = {    0b00111111,    /* 0 */
 
 static uint8_t tm1637currentdisplayvalue[MAX_NO_OF_CHARACTERS] = { };
 
-void Delay_us(int time)
+/*****************************************************************************/
+/* TM1637 Functions                                                          */
+/*****************************************************************************/
+void delay_Us(int time)
 {
 	for(int i = 0; i < time; i++)
 		{
@@ -56,34 +64,33 @@ void Delay_us(int time)
 				__asm__("nop");
 		}
 }
-
 void TM1637_Start (void)
 {
 
 	CLK_HIGH();
 	DATA_HIGH();
-	Delay_us (2);
+	delay_Us(2);
 	DATA_LOW();
 }
 
 void TM1637_Stop (void)
 {
 	CLK_LOW();
-	Delay_us (2);
+	delay_Us(2);
 	DATA_LOW();
-	Delay_us (2);
+	delay_Us(2);
 	CLK_HIGH();
-	Delay_us (2);
+	delay_Us(2);
 	DATA_HIGH();
 }
 
 void TM1637_WaitForAck (void)
 {
 	CLK_LOW();
-	Delay_us (5); // After the falling edge of the eighth clock delay 5us
+	delay_Us(5); // After the falling edge of the eighth clock delay 5us
 	              // ACK signals the beginning of judgment
 	CLK_HIGH();
-	Delay_us (2);
+	delay_Us(2);
 	CLK_LOW();
 }
 
@@ -101,10 +108,10 @@ void TM1637_WriteByte (uint8_t byte)
 		{
 			DATA_LOW();
 		}
-		Delay_us (3);
+		delay_Us(3);
 		byte = byte >> 1;
 		CLK_HIGH();
-		Delay_us (3);
+		delay_Us(3);
 	}
 }
 

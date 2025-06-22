@@ -31,8 +31,8 @@
  */
 
 
-#ifndef PLATFORM_TM1637_H_
-#define PLATFORM_TM1637_H_
+#ifndef TM1637_H_
+#define TM1637_H_
 
 #ifdef __cplusplus
 extern "C"
@@ -42,9 +42,7 @@ extern "C"
 /*****************************************************************************/
 /* Include Files                                                             */
 /*****************************************************************************/
-
 #include "Platform_Translate.h"
-
 /*****************************************************************************/
 /* TM1637 Macros                                                             */
 /*****************************************************************************/
@@ -86,27 +84,7 @@ extern "C"
 #define DISPLAY_ON                           0x08
 #define DISPLAY_OFF                          0x00
 
-/*****************************************************************************
- * @brief Initializes the ADC module.
- *
- * @details Configures the ADC peripheral with the specified resolution,
- *          input channel, and sampling time. This must be called before
- *          starting any ADC conversion.
- *
- * @param[in] channel   ADC channel number (e.g., 0 to 15).
- * @param[in] resolution ADC resolution (e.g., 8, 10, or 12 bits).
- *
- * @return 0 if initialization was successful, -1 otherwise.
- *
- * @retval  0 Initialization successful.
- * @retval -1 Invalid channel or resolution.
- *
- * @note Ensure that the system clock is configured before calling this function.
- *
- * @warning Do not call this function during an ongoing ADC conversion.
- *
- * @see adc_start_conversion(), adc_read_value()
- *****************************************************************************/
+
 void Delay_us(int time);
 void TM1637_Start (void);
 void TM1637_Stop (void);
@@ -123,4 +101,4 @@ void TM1637_Update_Data_Dots(uint8_t *displayvalue, uint8_t status);
 }
 #endif
 
-#endif /* PLATFORM_TM1637_H_ */
+#endif /* TM1637_H_ */

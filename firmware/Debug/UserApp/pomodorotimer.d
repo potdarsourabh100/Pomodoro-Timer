@@ -1,5 +1,5 @@
-Platform/TM1637.o: ../Platform/TM1637.c ../Platform/TM1637.h \
- ../Platform/Platform_Translate.h ../Core/Inc/main.h \
+UserApp/pomodorotimer.o: ../UserApp/pomodorotimer.c \
+ ../UserApp/../UserApp/pomodorotimer.h ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -30,9 +30,9 @@ Platform/TM1637.o: ../Platform/TM1637.c ../Platform/TM1637.h \
  D:/Sourabh_Workspace/My_Personal_Project_Workspaces/Pomodoro-Timer/firmware/Common/StdUtil.h \
  D:/Sourabh_Workspace/My_Personal_Project_Workspaces/Pomodoro-Timer/firmware/Common/Version.h \
  ../Core/Inc/../../UserApp/pomodorotimer.h \
- D:/Sourabh_Workspace/My_Personal_Project_Workspaces/Pomodoro-Timer/firmware/Platform/TM1637.h
-../Platform/TM1637.h:
-../Platform/Platform_Translate.h:
+ D:/Sourabh_Workspace/My_Personal_Project_Workspaces/Pomodoro-Timer/firmware/Platform/TM1637.h \
+ D:/Sourabh_Workspace/My_Personal_Project_Workspaces/Pomodoro-Timer/firmware/Platform/Platform_Translate.h
+../UserApp/../UserApp/pomodorotimer.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
@@ -65,3 +65,4 @@ D:/Sourabh_Workspace/My_Personal_Project_Workspaces/Pomodoro-Timer/firmware/Comm
 D:/Sourabh_Workspace/My_Personal_Project_Workspaces/Pomodoro-Timer/firmware/Common/Version.h:
 ../Core/Inc/../../UserApp/pomodorotimer.h:
 D:/Sourabh_Workspace/My_Personal_Project_Workspaces/Pomodoro-Timer/firmware/Platform/TM1637.h:
+D:/Sourabh_Workspace/My_Personal_Project_Workspaces/Pomodoro-Timer/firmware/Platform/Platform_Translate.h:

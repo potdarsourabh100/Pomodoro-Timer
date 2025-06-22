@@ -3,9 +3,8 @@
 A compact and handheld Pomodoro Timer built using an STM32 microcontroller, TM1637 display, 2 tactile switches, and a buzzer. It is powered by dual 18650 Li-ion cells with a 2S BMS and includes USB charging support.
 
 ---
-## Working Idea
 
-# Pomodoro Timer Flowchart
+## Pomodoro Timer Flowchart
 
 ```text
 +----------------------+
@@ -82,12 +81,12 @@ A compact and handheld Pomodoro Timer built using an STM32 microcontroller, TM16
            |
            v
      (Repeat Cycle)
-
+```
 ---
 
 ## 🧠 Features
 
--⏱️ Pomodoro Mode(P): 25 minutes of focus time
+- ⏱️ Pomodoro Mode(P): 25 minutes of focus time
 - ☕ Short Break(S): 5 minutes
 - 😌 Long Break(L): 15 minutes (after 4 Pomodoros)
 - 2 Push Buttons:
@@ -109,7 +108,6 @@ A compact and handheld Pomodoro Timer built using an STM32 microcontroller, TM16
 | Buzzer         | Active piezo buzzer                  |
 | Switches       | 2x Tactile push buttons              |
 | Battery        | 2x 18650 Li-ion cells                |
-| BMS            | 2S Battery Management System         |
 | USB Charging   | TP4056-based charger (5V input)      |
 
 ---
@@ -117,8 +115,8 @@ A compact and handheld Pomodoro Timer built using an STM32 microcontroller, TM16
 ## 🔧 Build Instructions
 
 1. Assemble all hardware components as per the schematic.
-2. Flash the firmware to STM32 using ST-Link.
-3. Power the system using battery or USB.
+2. Flash the firmware to the STM32 using ST-Link.
+3. Power the system using a battery or USB.
 4. Use Button 1 to start/stop/reset the timer.
 5. Use Button 2 to switch between Pomodoro, Short, and Long Break modes.
 

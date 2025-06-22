@@ -3,6 +3,82 @@ A handheld Pomodoro Timer device to help users manage time effectively using the
 
 ## 2. Objective
 To develop a compact, portable, and user-friendly Pomodoro Timer that offers a simple user interface and effective time tracking with minimal hardware complexity.
+```text
++----------------------+
+|   Start Application |
++----------------------+
+           |
+           v
++----------------------+
+|  Set Work Duration   |<------+
+|   (e.g., 25 mins)    |       |
++----------------------+       |
+           |                   |
+           v                   |
++----------------------+       |
+|    Start Work Timer  |       |
++----------------------+       |
+           |                   |
+           v                   |
++----------------------+       |
+|   Countdown Work     |       |
+|   Time Every Second  |       |
++----------------------+       |
+           |                   |
+           v                   |
++----------------------+       |
+|  Work Time Finished? |--No--+
++----------------------+
+           |
+          Yes
+           |
+           v
++----------------------+
+| Play Alarm / Notify |
++----------------------+
+           |
+           v
++----------------------+
+|  Increment Pomodoro  |
+|     Count (+1)       |
++----------------------+
+           |
+           v
++----------------------+
+| Pomodoro Count % 4 = 0? |
++----------------------+
+       | Yes          | No
+       v              v
++----------------+  +----------------------+
+| Long Break     |  | Short Break         |
+| (15-30 mins)   |  | (5 mins)            |
++----------------+  +----------------------+
+       |                   |
+       v                   v
++----------------------+  +----------------------+
+|  Start Break Timer   |  |  Start Break Timer   |
++----------------------+  +----------------------+
+           |                   |
+           v                   v
++----------------------+  +----------------------+
+| Countdown Break Time |  | Countdown Break Time |
++----------------------+  +----------------------+
+           |                   |
+           v                   v
++----------------------+  +----------------------+
+| Break Time Finished? |  | Break Time Finished? |
++----------------------+  +----------------------+
+           |                   |
+          Yes                 Yes
+           |                   |
+           v                   v
++----------------------+
+|     Back to Work     |
++----------------------+
+           |
+           v
+     (Repeat Cycle)
+```
 
 ## 3. Hardware Requirements
 ### 3.1 Core Components
@@ -42,9 +118,9 @@ Enclosure	Handheld ergonomic plastic casing (3D printed or off-the-shelf)
 - Continuous short beeps for 5s as final notification (optional).
 ### 4.4 Power Management
 - Powered by 2x 18650 cells in series.
-- 2S BMS to provide protection from over-voltage, over-discharge, and short-circuit.
-- Battery voltage monitoring via ADC to indicate low battery.
-- Low battery warning on display and buzzer beep pattern.
+- 2S BMS to protect from over-voltage, over-discharge, and short-circuit.
+- Battery voltage monitoring via ADC to indicate a low battery.
+- A low battery warning on display and a buzzer beep pattern.
 - Auto shutdown when battery is critically low.
 ### 4.5 Charging and USB Interface
 - USB port for: Charging the batteries (5V input)
@@ -54,13 +130,13 @@ Enclosure	Handheld ergonomic plastic casing (3D printed or off-the-shelf)
 - Device should:
   - Be compact and handheld (approx. 100mm x 60mm x 30mm)
   - Use minimal buttons for ease of use
-  - Have accessible USB port and clear visibility of the display
+  - Have an accessible USB port and clear visibility of the display
 ## 5. Non-Functional Requirements
 ### 5.1 Performance
 - Timer precision: ±1 second over 25 minutes
 - Debouncing: Software-based for all buttons
 - Startup Time: <2 seconds
-- Buzzer should not exceed 80 dB SPL at 10cm
+- The buzzer should not exceed 80 dB SPL at 10cm
 ### 5.2 Power Efficiency
 - Sleep mode when idle
 - Wake up on button press

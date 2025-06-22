@@ -144,7 +144,8 @@
  *
  * @note Does not constrain the result within the output range.
  */
-int32_t stdUtil_map(int32_t x, int32_t in_min, int32_t in_max, int32_t out_min, int32_t out_max)
+
+static inline int32_t stdUtil_map(int32_t x, int32_t in_min, int32_t in_max, int32_t out_min, int32_t out_max)
 {
     return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }

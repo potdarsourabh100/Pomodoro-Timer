@@ -2,28 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
-> This project adheres to [Semantic Versioning](https://semver.org/).
-
-
 ---
 
-## [Unreleased]
-### ✨ Added
-- Initial hardware plan & schematic development
-
----
-
-## [1.0.0] - 2025-04-15
+## [1.0.0] - 2025-06-22
 ### 🚀 Initial Release
 - Core Pomodoro functionality (25/5/15 minute cycles)
----
+### ⚠️ Warning/Notice
+- Button-related activities are started.
+- The pause function is yet to be added.
+- Buzzer hardware not yet added.
+### 💤 Power/Performance
+- Although initial performance looks good
+Power-related activities are yet to be tested thoroughly.
 
 ## Legend
 
-| Emoji  | Meaning         |
-|--------|------------------|
+| Emoji  | Meaning            |
+|--------|--------------------|
 | ✨     | New feature       |
-| 🛠️     | Change/Improvement |
+| 🛠️     | Change/Improvement|
 | 🐞     | Bug fix           |
 | 🚀     | Major release     |
 | ⚠️     | Warning/Notice    |
