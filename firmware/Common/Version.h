@@ -69,6 +69,14 @@
 																					💤 Power/Performance
 																					- Although the initial performance looks good
 																					Power-related activities are yet to be tested thoroughly.
+ * 14-07-2025     1.2.0    pomodorotimer.c          1.2.0        Sourabh Potdar     🐞 Bug fix
+						   buzzer.c  												- The given platform dependencies are removed
+						   buzzer.h													- Buzzer functionalities added
+                           platform.h    											⚠️ Warning/Notice
+																					- The pause function is yet to be added.
+																					💤 Power/Performance
+																					- Although the initial performance looks good
+																					Power-related activities are yet to be tested thoroughly.
  *
 */
 

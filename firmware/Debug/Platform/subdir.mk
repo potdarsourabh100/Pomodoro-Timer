@@ -5,13 +5,16 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../Platform/TM1637.c 
+../Platform/TM1637.c \
+../Platform/buzzer.c 
 
 OBJS += \
-./Platform/TM1637.o 
+./Platform/TM1637.o \
+./Platform/buzzer.o 
 
 C_DEPS += \
-./Platform/TM1637.d 
+./Platform/TM1637.d \
+./Platform/buzzer.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -21,7 +24,7 @@ Platform/%.o Platform/%.su Platform/%.cyclo: ../Platform/%.c Platform/subdir.mk
 clean: clean-Platform
 
 clean-Platform:
-	-$(RM) ./Platform/TM1637.cyclo ./Platform/TM1637.d ./Platform/TM1637.o ./Platform/TM1637.su
+	-$(RM) ./Platform/TM1637.cyclo ./Platform/TM1637.d ./Platform/TM1637.o ./Platform/TM1637.su ./Platform/buzzer.cyclo ./Platform/buzzer.d ./Platform/buzzer.o ./Platform/buzzer.su
 
 .PHONY: clean-Platform
 

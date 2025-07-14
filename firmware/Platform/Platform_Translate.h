@@ -75,4 +75,57 @@
  */
 #define DATA_LOW()  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, GPIO_PIN_RESET);
 
+/**
+ * @brief Sets the Buzzer On for notification
+ *
+ * @details This macro sets GPIO pin PB9 to low state, representing a Buzzer on
+ */
+#define BUZZER_ON() HAL_GPIO_WritePin(GPIOB, GPIO_PIN_9, GPIO_PIN_RESET)
+
+/**
+ * @brief Sets the Buzzer Off for notification
+ *
+ * @details This macro sets GPIO pin PB9 to high state, representing a Buzzer off
+ */
+#define BUZZER_OFF()  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_9, GPIO_PIN_SET)
+
+/**
+ * @brief Turn ON the 1 Second timer
+ *
+ * @details This macro turns On the 1 Second timer
+ */
+#define TIMER_ON() HAL_TIM_Base_Start_IT(&htim3)
+
+/**
+ * @brief Turn OFF the 1 Second timer
+ *
+ * @details This macro turns Off the 1 Second timer
+ */
+#define TIMER_OFF()  HAL_TIM_Base_Stop_IT(&htim3)
+
+/**
+ * @brief Read control Button State
+ *
+ * @details This macro will read back control button state
+ * GPIO_PIN_SET = true/1
+ * GPIO_PIN_RESET = false/0
+ */
+#define CONTROLBUTTON_READ() HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0)
+
+/**
+ * @brief Read function Button State
+ *
+ * @details This macro will read back function button state
+ * GPIO_PIN_SET = true/1
+ * GPIO_PIN_RESET = false/0
+ */
+#define FUNCTIONBUTTON_READ()  HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_1)
+
+/**
+ * @brief Milliseconds delay function
+ *
+ * @details This macro translate milliseconds delay function into User delay function
+ */
+#define APP_DELAY(milliseconds)  HAL_Delay(milliseconds)
+
 #endif /* PLATFORM_PLATFORM_TRANSLATE_H_ */

@@ -27,8 +27,9 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  *
  * Author:          Sourabh Potdar
- * Version:         V1.0.1
+ * Version:         V1.2.1
  * Fixes:           22-06-2025 The timer was not performing correct mode in the proper order fixed
+ * 					14-07-2025 The given platform dependency are removed & buzzer functionalities added
  */
 /*****************************************************************************/
 /* Include Files                                                             */
@@ -60,6 +61,7 @@ bool glbLastDotState = false; /** Tracks the state of colon/dot between digits o
 bool glbTimerState = false; /** Indicates whether the timer is currently running or stopped **/
 
 PomodoroFunctions_e glbModeSelection = PomodoroFunctions_PomodoroMode; /** Current mode of Pomodoro session **/
+
 uintmax_t glbCurrentModeTime = POMODOROMODE_TIME; /** Duration of the current mode **/
 
 uint8_t glbPomodoroCycles = 0; /** Counter for the number of Pomodoro sessions completed **/
@@ -95,7 +97,7 @@ void buttonControlDebounce(void)
 	static uint8_t glbButtonState;            /* The Current Reading From The Input Pin */
 	static uint8_t glbLastButtonState = 0;    /* The previous reading from The Input Pin */
 
-	uint8_t tempButtonReading = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0); /* read the state of the switch into a local variable */
+	uint8_t tempButtonReading = CONTROLBUTTON_READ(); /* read the state of the switch into a local variable */
 	/** GPIO_PIN_0 is the control button used to start/stop the Pomodoro timer **/
 
     if(tempButtonReading != glbLastButtonState) /* If the switch changed, due to noise or pressing */
@@ -126,7 +128,7 @@ void buttonControlDebounce(void)
 
             		glbTimerState = true;
             		/* Start The timer */
-            	    if (HAL_TIM_Base_Start_IT(&htim3) != HAL_OK)
+            	    if (TIMER_ON() != HAL_OK)
             		{
             		  /* Starting Error */
             		  Error_Handler();
@@ -148,7 +150,7 @@ void buttonControlDebounce(void)
 
             		glbTimerState = false;
                 	/* Stop The timer */
-                   if (HAL_TIM_Base_Stop_IT(&htim3) != HAL_OK)
+                   if (TIMER_OFF() != HAL_OK)
                    {
                 	   /* Stopping Error */
                 	   Error_Handler();
@@ -187,7 +189,7 @@ void buttonFunctionDebounce(void)
 	static uint8_t glbButtonState;            /* The Current Reading From The Input Pin */
 	static uint8_t glbLastButtonState = 0;    /* The previous reading from The Input Pin */
 
-	uint8_t tempButtonReading = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_1); /* read the state of the switch into a local variable */
+	uint8_t tempButtonReading = FUNCTIONBUTTON_READ(); /* read the state of the switch into a local variable */
 	/** GPIO_PIN_1 is the function button used to switch between Pomodoro modes **/
 
     if(tempButtonReading != glbLastButtonState) /* If the switch changed, due to noise or pressing */
@@ -268,6 +270,9 @@ void updateDisplay(void)
         		glbModeSelection = PomodoroFunctions_ShortBreak;
         		glbCurrentModeTime = SHORTBREAK_TIME;
         		glbPomodoroCycles++;
+        		BUZZER_ON();
+        		APP_DELAY(50);
+        		BUZZER_OFF();
         	}
         	else if(glbModeSelection == PomodoroFunctions_ShortBreak)
         	{
@@ -283,11 +288,30 @@ void updateDisplay(void)
         			glbModeSelection = PomodoroFunctions_PomodoroMode;
         			glbCurrentModeTime = POMODOROMODE_TIME;
         		}
+        		BUZZER_ON();
+        		APP_DELAY(50);
+        		BUZZER_OFF();
+        		APP_DELAY(50);
+        		BUZZER_ON();
+        		APP_DELAY(50);
+        		BUZZER_OFF();
         	}
         	else if(glbModeSelection == PomodoroFunctions_LongBreak)
         	{
         		glbModeSelection = PomodoroFunctions_PomodoroMode;
         		glbCurrentModeTime = POMODOROMODE_TIME;
+
+        		BUZZER_ON();
+        		APP_DELAY(50);
+        		BUZZER_OFF();
+        		APP_DELAY(50);
+        		BUZZER_ON();
+        		APP_DELAY(50);
+        		BUZZER_OFF();
+        		APP_DELAY(50);
+        		BUZZER_ON();
+        		APP_DELAY(50);
+        		BUZZER_OFF();
         	}
 		}
 

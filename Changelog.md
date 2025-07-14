@@ -3,9 +3,19 @@
 All notable changes to this project will be documented in this file.
 
 ---
+## [1.2.0] - 2025-07-14
+### 🐞 Bug fix
+- The given platform dependencies are removed 
+- Buzzer functionalities added
+### ⚠️ Warning/Notice
+- The pause function is yet to be added.
+### 💤 Power/Performance
+- Although the initial performance looks good
+Power-related activities are yet to be tested thoroughly.
+
 ## [1.0.1] - 2025-06-22
 ### 🐞 Bug fix
-- The timer was not performing correct mode in the proper order
+- The timer was not performing in the correct mode in the proper order
 fixed
 ### ⚠️ Warning/Notice
 - Button-related activities are started.
