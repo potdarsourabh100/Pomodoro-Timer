@@ -37,8 +37,8 @@
 #define VERSION_H_
 
 #define MAJOR           1
-#define MINOR           0
-#define INCREMENTAL     0
+#define MINOR           2
+#define INCREMENTAL     2
 
 // To convert the parameter into string
 #define _STRING(x)          #x
@@ -75,6 +75,13 @@
                            platform.h    											⚠️ Warning/Notice
 																					- The pause function is yet to be added.
 																					💤 Power/Performance
+																					- Although the initial performance looks good
+																					Power-related activities are yet to be tested thoroughly.
+ * 16-07-2025     1.2.2    pomodorotimer.c          1.2.2       Sourabh Potdar      ### 🐞 Bug fix
+																					- The values for cycles changed to 5 correct Logic implemented.
+																					### ⚠️ Warning/Notice
+																					- The pause function is yet to be added.
+																					### 💤 Power/Performance
 																					- Although the initial performance looks good
 																					Power-related activities are yet to be tested thoroughly.
  *

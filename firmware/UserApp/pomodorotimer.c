@@ -27,9 +27,10 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  *
  * Author:          Sourabh Potdar
- * Version:         V1.2.1
- * Fixes:           22-06-2025 The timer was not performing correct mode in the proper order fixed
- * 					14-07-2025 The given platform dependency are removed & buzzer functionalities added
+ * Version:         V1.2.2
+ * Fixes:           22-06-2025 The timer was not performing correct mode in the proper order fixed.
+ * 					14-07-2025 The given platform dependency are removed & buzzer functionalities added.
+ * 					16-07-2025 The values for cycles changed to 5 correct Logic implemented.
  */
 /*****************************************************************************/
 /* Include Files                                                             */
@@ -214,7 +215,7 @@ void buttonFunctionDebounce(void)
             	else if(glbModeSelection == PomodoroFunctions_ShortBreak)
             	{
             		glbPomodoroCycles++;
-            		if(glbPomodoroCycles == 8)
+            		if(glbPomodoroCycles == NO_OF_CYCLES)
             		{
             			glbModeSelection = PomodoroFunctions_LongBreak;
             			glbCurrentModeTime = LONGBREAK_TIME;
@@ -277,7 +278,7 @@ void updateDisplay(void)
         	else if(glbModeSelection == PomodoroFunctions_ShortBreak)
         	{
         		glbPomodoroCycles++;
-        		if(glbPomodoroCycles == 8)
+        		if(glbPomodoroCycles == NO_OF_CYCLES)
         		{
         			glbModeSelection = PomodoroFunctions_LongBreak;
         			glbCurrentModeTime = LONGBREAK_TIME;

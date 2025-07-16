@@ -68,6 +68,14 @@ extern "C"
  */
 #define LONGBREAK_TIME               (900)  /*15 minutes in seconds*/
 
+/**
+ * @brief No of cycles to shift to Long Break.
+ *
+ * @details If we required to take 6 cycles i.e. 3 pomodoros & 2 Short Breaks,
+ *          then Total no of cycles - 1 put 5 over here.
+ */
+#define NO_OF_CYCLES                  (5) /*3 Pomodoros & 2 Short Breaks*/
+
 /*****************************************************************************/
 /* Private Enums                                                             */
 /*****************************************************************************/

@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 
 ---
+## [1.2.2] - 2025-07-16
+### 🐞 Bug fix
+- The values for cycles changed to 5 correct Logic implemented.
+### ⚠️ Warning/Notice
+- The pause function is yet to be added.
+### 💤 Power/Performance
+- Although the initial performance looks good
+Power-related activities are yet to be tested thoroughly.
+---
 ## [1.2.0] - 2025-07-14
 ### 🐞 Bug fix
 - The given platform dependencies are removed 
