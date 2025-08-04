@@ -215,7 +215,7 @@ void buttonFunctionDebounce(void)
             	else if(glbModeSelection == PomodoroFunctions_ShortBreak)
             	{
             		glbPomodoroCycles++;
-            		if(glbPomodoroCycles == NO_OF_CYCLES)
+            		if(glbPomodoroCycles >= NO_OF_CYCLES)
             		{
             			glbModeSelection = PomodoroFunctions_LongBreak;
             			glbCurrentModeTime = LONGBREAK_TIME;
@@ -278,7 +278,7 @@ void updateDisplay(void)
         	else if(glbModeSelection == PomodoroFunctions_ShortBreak)
         	{
         		glbPomodoroCycles++;
-        		if(glbPomodoroCycles == NO_OF_CYCLES)
+        		if(glbPomodoroCycles >= NO_OF_CYCLES)
         		{
         			glbModeSelection = PomodoroFunctions_LongBreak;
         			glbCurrentModeTime = LONGBREAK_TIME;

@@ -6385,11 +6385,11 @@ void buttonFunctionDebounce(void)
  8002630:	b2da      	uxtb	r2, r3
  8002632:	4b22      	ldr	r3, [pc, #136]	@ (80026bc <buttonFunctionDebounce+0x12c>)
  8002634:	701a      	strb	r2, [r3, #0]
-            		if(glbPomodoroCycles == NO_OF_CYCLES)
+            		if(glbPomodoroCycles >= NO_OF_CYCLES)
  8002636:	4b21      	ldr	r3, [pc, #132]	@ (80026bc <buttonFunctionDebounce+0x12c>)
  8002638:	781b      	ldrb	r3, [r3, #0]
- 800263a:	2b05      	cmp	r3, #5
- 800263c:	d10d      	bne.n	800265a <buttonFunctionDebounce+0xca>
+ 800263a:	2b04      	cmp	r3, #4
+ 800263c:	d90d      	bls.n	800265a <buttonFunctionDebounce+0xca>
             		{
             			glbModeSelection = PomodoroFunctions_LongBreak;
  800263e:	4b1d      	ldr	r3, [pc, #116]	@ (80026b4 <buttonFunctionDebounce+0x124>)
@@ -6544,11 +6544,11 @@ void updateDisplay(void)
  8002754:	b2da      	uxtb	r2, r3
  8002756:	4b59      	ldr	r3, [pc, #356]	@ (80028bc <updateDisplay+0x1fc>)
  8002758:	701a      	strb	r2, [r3, #0]
-        		if(glbPomodoroCycles == NO_OF_CYCLES)
+        		if(glbPomodoroCycles >= NO_OF_CYCLES)
  800275a:	4b58      	ldr	r3, [pc, #352]	@ (80028bc <updateDisplay+0x1fc>)
  800275c:	781b      	ldrb	r3, [r3, #0]
- 800275e:	2b05      	cmp	r3, #5
- 8002760:	d10d      	bne.n	800277e <updateDisplay+0xbe>
+ 800275e:	2b04      	cmp	r3, #4
+ 8002760:	d90d      	bls.n	800277e <updateDisplay+0xbe>
         		{
         			glbModeSelection = PomodoroFunctions_LongBreak;
  8002762:	4b55      	ldr	r3, [pc, #340]	@ (80028b8 <updateDisplay+0x1f8>)
