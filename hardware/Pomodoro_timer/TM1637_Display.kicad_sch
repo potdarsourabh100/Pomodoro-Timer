@@ -151,131 +151,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:R_Small"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0.254)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "R"
-				(at 0 0 90)
-				(effects
-					(font
-						(size 1.016 1.016)
-					)
-				)
-			)
-			(property "Value" "R_Small"
-				(at 1.778 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Resistor, small symbol"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "R resistor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "R_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "R_Small_0_1"
-				(rectangle
-					(start -0.762 1.778)
-					(end 0.762 -1.778)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "R_Small_1_1"
-				(pin passive line
-					(at 0 2.54 270)
-					(length 0.762)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -2.54 90)
-					(length 0.762)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Display_Character:CC56-12EWA"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -1602,18 +1477,6 @@
 		(uuid "873948b0-50cf-4ba8-aea8-b75c4b8a2390")
 	)
 	(junction
-		(at 44.45 83.82)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d3afa89e-83ec-48b7-ae14-05d5e8f6b7b0")
-	)
-	(junction
-		(at 33.02 88.9)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d8970fb1-278f-42f9-87f6-a34f594e994d")
-	)
-	(junction
 		(at 132.08 78.74)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1807,16 +1670,6 @@
 	)
 	(wire
 		(pts
-			(xy 33.02 67.31) (xy 33.02 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6cfaccea-3f56-4df9-9e65-b7a639d8e3d0")
-	)
-	(wire
-		(pts
 			(xy 100.33 83.82) (xy 198.12 83.82)
 		)
 		(stroke
@@ -1824,36 +1677,6 @@
 			(type default)
 		)
 		(uuid "6dcb7cfc-719e-4c01-9a55-0f3ba1c95553")
-	)
-	(wire
-		(pts
-			(xy 44.45 83.82) (xy 44.45 78.74)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "70881575-f624-4b4d-aae4-b42d58907ba1")
-	)
-	(wire
-		(pts
-			(xy 44.45 67.31) (xy 44.45 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "71e71b46-9796-49d5-96c7-b78e16885774")
-	)
-	(wire
-		(pts
-			(xy 26.67 88.9) (xy 33.02 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "739927c0-037f-436c-b145-923948c48384")
 	)
 	(wire
 		(pts
@@ -1947,16 +1770,6 @@
 	)
 	(wire
 		(pts
-			(xy 64.77 88.9) (xy 33.02 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b4a020ab-59a8-44cf-bf2d-8d637b72c8c5")
-	)
-	(wire
-		(pts
 			(xy 200.66 86.36) (xy 100.33 86.36)
 		)
 		(stroke
@@ -2047,16 +1860,6 @@
 	)
 	(wire
 		(pts
-			(xy 26.67 83.82) (xy 44.45 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e3370d0f-87d5-4a06-be91-607b8aec1ff1")
-	)
-	(wire
-		(pts
 			(xy 133.35 62.23) (xy 121.92 62.23)
 		)
 		(stroke
@@ -2074,16 +1877,6 @@
 			(type default)
 		)
 		(uuid "ec96d68d-9866-47b4-9098-99b56e4af46c")
-	)
-	(wire
-		(pts
-			(xy 64.77 83.82) (xy 44.45 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ef48df47-950d-4027-8f86-1ce73d03d70d")
 	)
 	(wire
 		(pts
@@ -2114,16 +1907,6 @@
 			(type default)
 		)
 		(uuid "f533a39c-d7a2-42e6-b31e-4ebed7110603")
-	)
-	(wire
-		(pts
-			(xy 33.02 88.9) (xy 33.02 78.74)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f56f890e-9210-4165-8591-687b4bb1fbdc")
 	)
 	(wire
 		(pts
@@ -2159,72 +1942,6 @@
 	)
 	(global_label "PWR"
 		(shape output)
-		(at 44.45 67.31 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "3898755f-0e50-4a9c-93b3-d9c88a3697a5")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 44.45 60.3334 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "PWR"
-		(shape output)
-		(at 33.02 67.31 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "47d0e3e0-f113-4195-bce3-567c495d5245")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 33.02 60.3334 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "CLK"
-		(shape output)
-		(at 26.67 83.82 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "66326ab1-53ac-45fa-bd49-af1181a00a20")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 20.1167 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "PWR"
-		(shape output)
 		(at 134.62 78.74 0)
 		(fields_autoplaced yes)
 		(effects
@@ -2241,28 +1958,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "DIO"
-		(shape output)
-		(at 26.67 88.9 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "f18df290-58b8-4f89-a0bf-f78863afdf65")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 20.4795 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 				(hide yes)
 			)
 		)
@@ -2360,146 +2055,6 @@
 			(project ""
 				(path "/de804b87-618c-4b40-9e9d-dfdac3d4076a/71d7b1a6-dd2b-42fa-8369-ee1c59b44dc2"
 					(reference "U4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R_Small")
-		(at 44.45 76.2 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "55c32155-5996-4291-972b-abc7e41c52d1")
-		(property "Reference" "R6"
-			(at 46.99 74.9299 0)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1K"
-			(at 46.99 77.4699 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 44.45 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 44.45 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, small symbol"
-			(at 44.45 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "91baab17-1755-4eb2-a973-eb1f369bcdab")
-		)
-		(pin "2"
-			(uuid "a4b660b7-10a5-4ab2-8f17-ab6dc5571cb7")
-		)
-		(instances
-			(project ""
-				(path "/de804b87-618c-4b40-9e9d-dfdac3d4076a/71d7b1a6-dd2b-42fa-8369-ee1c59b44dc2"
-					(reference "R6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R_Small")
-		(at 33.02 76.2 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "70571910-c818-4aed-bba0-74ab35d942e0")
-		(property "Reference" "R7"
-			(at 35.56 74.9299 0)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1K"
-			(at 35.56 77.4699 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 33.02 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 33.02 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, small symbol"
-			(at 33.02 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "1273dbf3-a364-4769-9087-17773d6b08b2")
-		)
-		(pin "1"
-			(uuid "e972c22e-07a5-4b60-a459-dfe683b00f98")
-		)
-		(instances
-			(project ""
-				(path "/de804b87-618c-4b40-9e9d-dfdac3d4076a/71d7b1a6-dd2b-42fa-8369-ee1c59b44dc2"
-					(reference "R7")
 					(unit 1)
 				)
 			)

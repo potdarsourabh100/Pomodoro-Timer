@@ -620,10 +620,6 @@
     [
       "71d7b1a6-dd2b-42fa-8369-ee1c59b44dc2",
       "TM1637_Display"
-    ],
-    [
-      "334737e5-a384-4439-b51a-425d94e2f2aa",
-      "MCU,Button,Buzzer"
     ]
   ],
   "text_variables": {}
