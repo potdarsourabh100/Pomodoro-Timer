@@ -12,6 +12,48 @@
 	)
 	(lib_symbols)
 	(sheet
+		(at 16.51 73.66)
+		(size 189.23 64.77)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "01541e5a-8295-451b-b20a-bd0146844e4d")
+		(property "Sheetname" "MCU_Misc"
+			(at 16.51 72.9484 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "MCU_Misc.kicad_sch"
+			(at 16.51 139.0146 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Pomodoro_timer"
+				(path "/de804b87-618c-4b40-9e9d-dfdac3d4076a"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
 		(at 119.38 17.78)
 		(size 85.09 48.26)
 		(exclude_from_sim no)

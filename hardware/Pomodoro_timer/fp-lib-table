@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "SOP65P640X120")(type "KiCad")(uri "${KIPRJMOD}/SOP65P640X120.pretty")(options "")(descr ""))
+)

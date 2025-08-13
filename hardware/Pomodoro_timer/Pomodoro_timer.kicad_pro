@@ -485,7 +485,7 @@
     "last_paths": {
       "gencad": "",
       "idf": "",
-      "netlist": "",
+      "netlist": "Pomodoro_timer.net",
       "plot": "",
       "pos_files": "",
       "specctra_dsn": "",
@@ -595,8 +595,8 @@
     "meta": {
       "version": 1
     },
-    "net_format_name": "",
-    "page_layout_descr_file": "",
+    "net_format_name": "KiCad",
+    "page_layout_descr_file": "Microcontroller & Buttons",
     "plot_directory": "",
     "space_save_all_events": true,
     "spice_current_sheet_as_root": false,
@@ -620,6 +620,10 @@
     [
       "71d7b1a6-dd2b-42fa-8369-ee1c59b44dc2",
       "TM1637_Display"
+    ],
+    [
+      "01541e5a-8295-451b-b20a-bd0146844e4d",
+      "MCU_Misc"
     ]
   ],
   "text_variables": {}
